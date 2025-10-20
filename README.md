@@ -13,10 +13,10 @@ The system architecture follows the design principles outlined in our core docum
 
 | Role | Student | Primary Focus |
 | :--- | :--- | :--- |
-| **Project Manager & Integration Lead (S1)** | [Your Name] | Infrastructure setup, standardizing log formats, overall integration. |
-| **DB Forensics & Evidence Lead (S2)** | [Student 2 Name] | Database installation, logging, evidence collection/preservation. |
-| **Network Forensics Lead (S3)** | [Student 3 Name] | Network monitoring (Tshark), traffic baselining, Timing Channel research. |
-| **System & Logging Lead (S4)** | [Student 4 Name] | OS auditing (Auditd/Sysmon), system log collection, Storage Channel research. |
+| **Project Manager & Integration Lead (S1)** | Darshith Shetty  | Infrastructure setup, standardizing log formats, overall integration. |
+| **DB Forensics & Evidence Lead (S2)** | Rohit Patil  | Database installation, logging, evidence collection/preservation. |
+| **Network Forensics Lead (S3)** | Aaditya Chunekar | Network monitoring (Tshark), traffic baselining, Timing Channel research. |
+| **System & Logging Lead (S4)** | Prasen Shinde | OS auditing (Auditd/Sysmon), system log collection, Storage Channel research. |
 
 ---
 
