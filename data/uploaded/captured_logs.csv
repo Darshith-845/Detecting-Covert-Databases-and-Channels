@@ -1,0 +1,54 @@
+timestamp,hostname,process,message
+2025-11-02T18:23:05.100648+05:30,prasen-shinde-QEMU-Virtual-Machine,pkexec,pam_unix(polkit-1:session): session opened for user root(uid=0) by prasen-shinde(uid=1000)
+2025-11-02T18:23:05.101656+05:30,prasen-shinde-QEMU-Virtual-Machine,pkexec[6986],prasen-shinde: Executing command [USER=root] [TTY=unknown] [CWD=/home/prasen-shinde] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2025-11-02T18:23:19.533763+05:30,prasen-shinde-QEMU-Virtual-Machine,chronyd[1056],Selected source 185.125.190.123 (2.ntp.ubuntu.com)
+2025-11-02T18:25:01.568585+05:30,prasen-shinde-QEMU-Virtual-Machine,CRON[6996],pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-11-02T18:25:01.572230+05:30,prasen-shinde-QEMU-Virtual-Machine,CRON[6996],pam_unix(cron:session): session closed for user root
+2025-11-02T18:25:01.569569+05:30,prasen-shinde-QEMU-Virtual-Machine,CRON[6998],(root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-11-02T18:25:39.127196+05:30,prasen-shinde-QEMU-Virtual-Machine,chronyd[1056],Can't synchronise: no selectable sources (0 unreachable sources)
+2025-11-02T18:37:52.355861+05:30,prasen-shinde-QEMU-Virtual-Machine,kernel,"usb 3-3: USB disconnect, device number 3"
+2025-11-02T18:37:52.361288+05:30,prasen-shinde-QEMU-Virtual-Machine,kernel,"cdc_ncm 3-3:1.0 enxc213ad440c61: unregister 'cdc_ncm' usb-0000:00:05.0-3, CDC NCM (NO ZLP)"
+2025-11-02T18:37:52.368815+05:30,prasen-shinde-QEMU-Virtual-Machine,avahi-daemon[946],Interface enxc213ad440c61.IPv6 no longer relevant for mDNS.
+2025-11-02T18:37:52.371938+05:30,prasen-shinde-QEMU-Virtual-Machine,avahi-daemon[946],Leaving mDNS multicast group on interface enxc213ad440c61.IPv6 with address fe80::6c3c:5f92:f6f4:1613.
+2025-11-02T18:37:52.373151+05:30,prasen-shinde-QEMU-Virtual-Machine,avahi-daemon[946],Interface enxc213ad440c61.IPv4 no longer relevant for mDNS.
+2025-11-02T18:37:52.373927+05:30,prasen-shinde-QEMU-Virtual-Machine,avahi-daemon[946],Leaving mDNS multicast group on interface enxc213ad440c61.IPv4 with address 10.66.218.51.
+2025-11-02T18:37:52.375100+05:30,prasen-shinde-QEMU-Virtual-Machine,avahi-daemon[946],Withdrawing address record for fe80::6c3c:5f92:f6f4:1613 on enxc213ad440c61.
+2025-11-02T18:37:52.375220+05:30,prasen-shinde-QEMU-Virtual-Machine,avahi-daemon[946],Withdrawing address record for 10.66.218.51 on enxc213ad440c61.
+2025-11-02T18:37:52.390794+05:30,prasen-shinde-QEMU-Virtual-Machine,NetworkManager[1060],"<info>  [1762088872.3879] device (enxc213ad440c61): state change: activated -> unmanaged (reason 'unmanaged-link-not-init', managed-type: 'removed')"
+2025-11-02T18:37:52.395220+05:30,prasen-shinde-QEMU-Virtual-Machine,NetworkManager[1060],<info>  [1762088872.3886] dhcp4 (enxc213ad440c61): canceled DHCP transaction
+2025-11-02T18:37:52.395921+05:30,prasen-shinde-QEMU-Virtual-Machine,ModemManager[1124],<msg> [base-manager] port enxc213ad440c61 released by device '/sys/devices/pci0000:00/0000:00:05.0/usb3/3-3'
+2025-11-02T18:37:52.396279+05:30,prasen-shinde-QEMU-Virtual-Machine,NetworkManager[1060],<info>  [1762088872.3886] dhcp4 (enxc213ad440c61): activation: beginning transaction (timeout in 45 seconds)
+2025-11-02T18:37:52.396415+05:30,prasen-shinde-QEMU-Virtual-Machine,NetworkManager[1060],<info>  [1762088872.3886] dhcp4 (enxc213ad440c61): state changed no lease
+2025-11-02T18:37:52.396543+05:30,prasen-shinde-QEMU-Virtual-Machine,NetworkManager[1060],<info>  [1762088872.3892] manager: NetworkManager state is now CONNECTED_LOCAL
+2025-11-02T18:37:52.396772+05:30,prasen-shinde-QEMU-Virtual-Machine,NetworkManager[1060],<info>  [1762088872.3918] manager: NetworkManager state is now CONNECTED_SITE
+2025-11-02T18:37:52.396872+05:30,prasen-shinde-QEMU-Virtual-Machine,NetworkManager[1060],<info>  [1762088872.3921] policy: set 'netplan-enp0s1' (enp0s1) as default for IPv4 routing and DNS
+2025-11-02T18:37:52.425311+05:30,prasen-shinde-QEMU-Virtual-Machine,gsd-sharing[2296],Failed to stop gnome-user-share-webdav.service: GDBus.Error:org.freedesktop.systemd1.NoSuchUnit: Unit gnome-user-share-webdav.service not loaded.
+2025-11-02T18:37:52.428717+05:30,prasen-shinde-QEMU-Virtual-Machine,dbus-daemon[948],"[system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.10' (uid=0 pid=1060 comm=/usr/sbin/NetworkManager --no-daemon"" label=""unconfined"")"""
+2025-11-02T18:37:52.437027+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd[1],Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+2025-11-02T18:37:52.441591+05:30,prasen-shinde-QEMU-Virtual-Machine,NetworkManager[1060],<warn>  [1762088872.4414] dns-sd-resolved[5afa42b254185886]: send-updates SetLinkDomains@3 failed: GDBus.Error:org.freedesktop.resolve1.NoSuchLink: Link 3 not known
+2025-11-02T18:37:52.459592+05:30,prasen-shinde-QEMU-Virtual-Machine,dbus-daemon[948],[system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+2025-11-02T18:37:52.459677+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd[1],Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+2025-11-02T18:38:02.490190+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd[1],NetworkManager-dispatcher.service: Deactivated successfully.
+2025-11-02T18:38:05.478664+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd-resolved[426],Using degraded feature set TCP instead of UDP for DNS server 8.8.8.8.
+2025-11-02T18:38:23.913139+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd-resolved[426],Using degraded feature set UDP instead of TCP for DNS server 8.8.8.8.
+2025-11-02T18:40:09.236354+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd[1],Starting sysstat-collect.service - system activity accounting tool...
+2025-11-02T18:40:09.290478+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd[1],sysstat-collect.service: Deactivated successfully.
+2025-11-02T18:40:09.290881+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd[1],Finished sysstat-collect.service - system activity accounting tool.
+2025-11-02T18:40:30.129922+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd-resolved[426],Using degraded feature set TCP instead of UDP for DNS server 8.8.8.8.
+2025-11-02T18:40:48.547705+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd-resolved[426],Using degraded feature set UDP instead of TCP for DNS server 8.8.8.8.
+2025-11-02T18:44:09.660376+05:30,prasen-shinde-QEMU-Virtual-Machine,dbus-daemon[1932],"[session uid=1000 pid=1932 pidfd=5] Activating service name='org.gnome.Settings' requested by ':1.24' (uid=1000 pid=2125 comm=/usr/bin/gnome-shell"" label=""unconfined"")"""
+2025-11-02T18:44:09.893396+05:30,prasen-shinde-QEMU-Virtual-Machine,dbus-daemon[1932],[session uid=1000 pid=1932 pidfd=5] Successfully activated service 'org.gnome.Settings'
+2025-11-02T18:44:10.279186+05:30,prasen-shinde-QEMU-Virtual-Machine,org.gnome.Settings[7133],libEGL warning: failed to get driver name for fd -1
+2025-11-02T18:44:10.279573+05:30,prasen-shinde-QEMU-Virtual-Machine,org.gnome.Settings[7133],libEGL warning: MESA-LOADER: failed to retrieve device information
+2025-11-02T18:44:10.279629+05:30,prasen-shinde-QEMU-Virtual-Machine,org.gnome.Settings[7133],libEGL warning: failed to get driver name for fd -1
+2025-11-02T18:44:10.321441+05:30,prasen-shinde-QEMU-Virtual-Machine,org.gnome.Settings[7133],MESA: error: ZINK: failed to choose pdev
+2025-11-02T18:44:10.321557+05:30,prasen-shinde-QEMU-Virtual-Machine,org.gnome.Settings[7133],libEGL warning: egl: failed to create dri2 screen
+2025-11-02T18:44:15.132486+05:30,prasen-shinde-QEMU-Virtual-Machine,dbus-daemon[948],"[system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.179' (uid=1000 pid=7133 comm=/usr/bin/gnome-control-center --gapplication-servi"" label=""unconfined"")"""
+2025-11-02T18:44:15.142137+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd[1],Starting systemd-hostnamed.service - Hostname Service...
+2025-11-02T18:44:15.195487+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd[1],Started systemd-hostnamed.service - Hostname Service.
+2025-11-02T18:44:15.196126+05:30,prasen-shinde-QEMU-Virtual-Machine,dbus-daemon[948],[system] Successfully activated service 'org.freedesktop.hostname1'
+2025-11-02T18:44:45.235740+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd[1],systemd-hostnamed.service: Deactivated successfully.
+2025-11-02T18:45:01.763912+05:30,prasen-shinde-QEMU-Virtual-Machine,CRON[7206],(root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-11-02T18:45:01.763227+05:30,prasen-shinde-QEMU-Virtual-Machine,CRON[7204],pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-11-02T18:45:01.766563+05:30,prasen-shinde-QEMU-Virtual-Machine,CRON[7204],pam_unix(cron:session): session closed for user root
+2025-11-02T18:45:24.009700+05:30,prasen-shinde-QEMU-Virtual-Machine,systemd-resolved[426],"Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 1.1.1.1."

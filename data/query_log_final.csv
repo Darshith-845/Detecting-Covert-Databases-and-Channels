@@ -1,0 +1,1234 @@
+log_time,user_name,database_name,process_id,connection_from,session_id,session_line_num,command_tag,session_start_time,virtual_transaction_id,transaction_id,error_severity,sql_state,message,application_name,backend_type,,leader_pid
+2025-11-02 17:59:10.706 IST,,,31,,69074d6a.1f,2,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.011 s, sync=0.005 s, total=0.052 s; sync files=2, longest=0.003 s, average=0.003 s; distance=0 kB, estimate=0 kB; lsn=0/3E7DB40, redo lsn=0/3E7DAE8",,checkpointer,,0
+2025-11-02 18:03:54.045 IST,,,96,::1:51746,69074fb2.60,1,,2025-11-02 18:03:54 IST,,0,LOG,0,connection received: host=::1 port=51746,,not initialized,,0
+2025-11-02 18:03:54.050 IST,admin,covertDB,96,::1:51746,69074fb2.60,2,authentication,2025-11-02 18:03:54 IST,0/1,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:121)",,client backend,,0
+2025-11-02 18:03:54.050 IST,admin,covertDB,96,::1:51746,69074fb2.60,3,authentication,2025-11-02 18:03:54 IST,0/1,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-02 18:08:51.781 IST,admin,covertDB,96,::1:51746,69074fb2.60,4,idle,2025-11-02 18:03:54 IST,0/2,0,LOG,0,statement: CREATE DATABASE Bank;,psql,client backend,,0
+2025-11-02 18:08:52.108 IST,admin,covertDB,96,::1:51746,69074fb2.60,5,CREATE DATABASE,2025-11-02 18:03:54 IST,0/0,0,LOG,0,duration: 363.239 ms,psql,client backend,,0
+2025-11-02 18:09:10.767 IST,,,31,,69074d6a.1f,3,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 18:09:18.002 IST,admin,covertDB,96,::1:51746,69074fb2.60,6,idle,2025-11-02 18:03:54 IST,0/3,0,LOG,0,"statement: CREATE TABLE employees (
+    emp_id SERIAL PRIMARY KEY,
+    emp_name VARCHAR(50),
+    department VARCHAR(50),
+    salary NUMERIC(10,2),
+    hire_date DATE DEFAULT CURRENT_DATE
+);",psql,client backend,,0
+2025-11-02 18:09:18.040 IST,admin,covertDB,96,::1:51746,69074fb2.60,7,CREATE TABLE,2025-11-02 18:03:54 IST,0/0,0,LOG,0,duration: 39.670 ms,psql,client backend,,0
+2025-11-02 18:10:04.852 IST,admin,covertDB,96,::1:51746,69074fb2.60,8,idle,2025-11-02 18:03:54 IST,0/4,0,LOG,0,"statement: INSERT INTO employees (emp_name, department, salary) VALUES
+('Rohit Patil', 'IT', 55000),
+('Aarav Mehta', 'HR', 45000),
+('Neha Sharma', 'Finance', 60000),
+('Priya Desai', 'Marketing', 52000),
+('Vikas Nair', 'Operations', 47000),
+('Anjali Rao', 'Sales', 58000),
+('Suresh Kumar', 'IT', 62000),
+('Divya Singh', 'Finance', 57000);",psql,client backend,,0
+2025-11-02 18:10:04.866 IST,admin,covertDB,96,::1:51746,69074fb2.60,9,INSERT,2025-11-02 18:03:54 IST,0/0,0,LOG,0,duration: 48.381 ms,psql,client backend,,0
+2025-11-02 18:10:46.888 IST,admin,covertDB,96,::1:51746,69074fb2.60,10,idle,2025-11-02 18:03:54 IST,0/5,0,LOG,0,statement: UPDATE employees SET salary = salary * 1.05 WHERE department = 'IT';,psql,client backend,,0
+2025-11-02 18:10:46.904 IST,admin,covertDB,96,::1:51746,69074fb2.60,11,UPDATE,2025-11-02 18:03:54 IST,0/0,0,LOG,0,duration: 17.895 ms,psql,client backend,,0
+2025-11-02 18:10:46.933 IST,,,31,,69074d6a.1f,4,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 952 buffers (5.8%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=95.786 s, sync=0.313 s, total=96.167 s; sync files=305, longest=0.040 s, average=0.002 s; distance=4361 kB, estimate=4361 kB; lsn=0/42E4C10, redo lsn=0/42C0170",,checkpointer,,0
+2025-11-02 18:10:57.489 IST,admin,covertDB,96,::1:51746,69074fb2.60,12,idle,2025-11-02 18:03:54 IST,0/6,0,LOG,0,statement: UPDATE employees SET department = 'Analytics' WHERE emp_name = 'Neha Sharma';,psql,client backend,,0
+2025-11-02 18:10:57.525 IST,admin,covertDB,96,::1:51746,69074fb2.60,13,UPDATE,2025-11-02 18:03:54 IST,0/0,0,LOG,0,duration: 36.153 ms,psql,client backend,,0
+2025-11-02 18:11:07.515 IST,admin,covertDB,96,::1:51746,69074fb2.60,14,idle,2025-11-02 18:03:54 IST,0/7,0,LOG,0,statement: UPDATE employees SET salary = 60000 WHERE emp_name = 'Priya Desai';,psql,client backend,,0
+2025-11-02 18:11:07.523 IST,admin,covertDB,96,::1:51746,69074fb2.60,15,UPDATE,2025-11-02 18:03:54 IST,0/0,0,LOG,0,duration: 8.304 ms,psql,client backend,,0
+2025-11-02 18:22:28.548 IST,admin,covertDB,96,::1:51746,69074fb2.60,16,idle,2025-11-02 18:03:54 IST,0/8,0,LOG,0,statement: DELETE FROM employees WHERE department = 'HR' AND salary < 46000;,psql,client backend,,0
+2025-11-02 18:22:28.585 IST,admin,covertDB,96,::1:51746,69074fb2.60,17,DELETE,2025-11-02 18:03:54 IST,0/0,0,LOG,0,duration: 37.380 ms,psql,client backend,,0
+2025-11-02 18:22:28.586 IST,admin,covertDB,96,::1:51746,69074fb2.60,18,idle,2025-11-02 18:03:54 IST,0/9,0,LOG,0,statement: DELETE FROM employees WHERE emp_name = 'Tina Kapoor';,psql,client backend,,0
+2025-11-02 18:22:28.587 IST,admin,covertDB,96,::1:51746,69074fb2.60,19,DELETE,2025-11-02 18:03:54 IST,0/0,0,LOG,0,duration: 0.489 ms,psql,client backend,,0
+2025-11-02 18:23:22.425 IST,admin,covertDB,96,::1:51746,69074fb2.60,20,idle,2025-11-02 18:03:54 IST,0/10,0,ERROR,42601,"syntax error at or near ""'Ramesh Gupta'""",psql,client backend,,0
+2025-11-02 18:23:40.584 IST,,,31,,69074d6a.1f,5,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 18:23:44.459 IST,,,31,,69074d6a.1f,6,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 37 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=3.732 s, sync=0.120 s, total=3.876 s; sync files=34, longest=0.074 s, average=0.004 s; distance=147 kB, estimate=3940 kB; lsn=0/42E4F18, redo lsn=0/42E4E88",,checkpointer,,0
+2025-11-02 18:24:59.512 IST,admin,covertDB,96,::1:51746,69074fb2.60,21,idle,2025-11-02 18:03:54 IST,0/11,0,ERROR,42601,"syntax error at or near ""ALTER""",psql,client backend,,0
+2025-11-02 18:25:27.985 IST,admin,covertDB,96,::1:51746,69074fb2.60,22,idle,2025-11-02 18:03:54 IST,,0,LOG,0,disconnection: session time: 0:21:33.940 user=admin database=covertDB host=::1 port=51746,psql,client backend,,0
+2025-11-02 20:22:46.039 IST,,,214,::1:49740,6907703e.d6,1,,2025-11-02 20:22:46 IST,,0,LOG,0,connection received: host=::1 port=49740,,not initialized,,0
+2025-11-02 20:22:46.042 IST,admin,covertDB,214,::1:49740,6907703e.d6,2,authentication,2025-11-02 20:22:46 IST,01-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:121)",,client backend,,0
+2025-11-02 20:22:46.042 IST,admin,covertDB,214,::1:49740,6907703e.d6,3,authentication,2025-11-02 20:22:46 IST,01-Jan,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-02 20:24:18.003 IST,admin,covertDB,214,::1:49740,6907703e.d6,4,idle,2025-11-02 20:22:46 IST,01-Feb,0,LOG,0,"statement: CREATE TABLE transactions (
+    txn_id SERIAL PRIMARY KEY,
+    user_id INT,
+    amount NUMERIC(10,2),
+    txn_type VARCHAR(20),
+    txn_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(20)
+);",psql,client backend,,0
+2025-11-02 20:24:18.024 IST,admin,covertDB,214,::1:49740,6907703e.d6,5,CREATE TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 21.756 ms,psql,client backend,,0
+2025-11-02 20:30:23.856 IST,,,31,,69074d6a.1f,7,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 20:30:27.484 IST,,,31,,69074d6a.1f,8,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 34 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=3.442 s, sync=0.080 s, total=3.628 s; sync files=33, longest=0.041 s, average=0.003 s; distance=148 kB, estimate=3560 kB; lsn=0/4309FE0, redo lsn=0/4309F50",,checkpointer,,0
+2025-11-02 21:08:51.822 IST,admin,covertDB,214,::1:49740,6907703e.d6,6,idle,2025-11-02 20:22:46 IST,01-Mar,0,LOG,0,"statement: INSERT INTO transactions (user_id, amount, txn_type, status) VALUES
+(101, 2500.00, 'deposit', 'success'),
+(102, 1000.00, 'withdrawal', 'success'),
+(103, 5600.00, 'transfer', 'success'),
+(104, 3200.00, 'deposit', 'success'),
+(105, 4000.00, 'withdrawal', 'success'),
+(106, 2900.00, 'deposit', 'success'),
+(107, 1200.00, 'transfer', 'success'),
+(108, 7000.00, 'deposit', 'success'),
+(109, 2200.00, 'withdrawal', 'success'),
+(110, 3000.00, 'deposit', 'success'),
+(111, 4500.00, 'transfer', 'success'),
+(112, 500.00,  'withdrawal', 'failed'),
+(113, 2200.00, 'deposit', 'success'),
+(114, 5600.00, 'transfer', 'success'), 
+(115, 750.00,  'withdrawal', 'success'),
+(116, 9800.00, 'deposit', 'success'),
+(117, 6000.00, 'transfer', 'success'),
+(118, 1000.00, 'withdrawal', 'success'),
+(119, 800.00,  'withdrawal', 'success'),
+(120, 2500.00, 'deposit', 'success'),
+(121, 4200.00, 'transfer', 'success'),
+(122, 3300.00, 'deposit', 'success'),
+(123, 6400.00, 'transfer', 'success'),
+(124, 1200.00, 'withdrawal', 'failed'),
+(125, 5400.00, 'deposit', 'success'),
+(126, 2000.00, 'withdrawal', 'success'),
+(127, 8000.00, 'transfer', 'success'),
+(128, 9500.00, 'deposit', 'success'),
+(129, 7200.00, 'transfer', 'success'),
+(130, 1200.00, 'withdrawal', 'success'),
+(131, 1800.00, 'deposit', 'success'),
+(132, 4000.00, 'transfer', 'success'),
+(133, 5000.00, 'deposit', 'success'),
+(134, 900.00,  'withdrawal', 'failed'),
+(135, 3700.00, 'deposit', 'success'),
+(136, 2500.00, 'transfer', 'success'),
+(137, 4200.00, 'withdrawal', 'success'),
+(138, 700.00,  'withdrawal', 'success'),
+(139, 12000.00,'transfer', 'success'),
+(140, 9800.00, 'deposit', 'success'),
+(141, 6600.00, 'transfer', 'success'),
+(142, 1500.00, 'withdrawal', 'success'),
+(143, 8600.00, 'deposit', 'success'),
+(144, 9000.00, 'transfer', 'success'),
+(145, 1800.00, 'withdrawal', 'success');",psql,client backend,,0
+2025-11-02 21:08:51.868 IST,admin,covertDB,214,::1:49740,6907703e.d6,7,INSERT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 46.577 ms,psql,client backend,,0
+2025-11-02 21:11:51.854 IST,admin,covertDB,214,::1:49740,6907703e.d6,8,idle,2025-11-02 20:22:46 IST,01-Apr,0,LOG,0,statement: SELECT * from transactions;,psql,client backend,,0
+2025-11-02 21:11:51.855 IST,admin,covertDB,214,::1:49740,6907703e.d6,9,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 34.028 ms,psql,client backend,,0
+2025-11-02 21:12:11.712 IST,,,31,,69074d6a.1f,9,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 21:12:12.821 IST,,,31,,69074d6a.1f,10,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 10 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.015 s, sync=0.051 s, total=1.109 s; sync files=9, longest=0.044 s, average=0.006 s; distance=30 kB, estimate=3207 kB; lsn=0/43118D0, redo lsn=0/4311878",,checkpointer,,0
+2025-11-02 21:12:29.284 IST,,,284,::1:34396,69077be5.11c,1,,2025-11-02 21:12:29 IST,,0,LOG,0,connection received: host=::1 port=34396,,not initialized,,0
+2025-11-02 21:12:49.161 IST,admin,covertDB,214,::1:49740,6907703e.d6,10,idle,2025-11-02 20:22:46 IST,01-May,0,LOG,0,statement: SELECT * from transactions;,psql,client backend,,0
+2025-11-02 21:12:49.162 IST,admin,covertDB,214,::1:49740,6907703e.d6,11,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.855 ms,psql,client backend,,0
+2025-11-02 21:13:39.836 IST,admin,covertDB,214,::1:49740,6907703e.d6,12,idle,2025-11-02 20:22:46 IST,01-Jun,0,LOG,0,statement: SELECT * from transactions;,psql,client backend,,0
+2025-11-02 21:13:39.836 IST,admin,covertDB,214,::1:49740,6907703e.d6,13,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.396 ms,psql,client backend,,0
+2025-11-02 21:14:03.789 IST,admin,covertDB,214,::1:49740,6907703e.d6,14,idle,2025-11-02 20:22:46 IST,01-Jul,0,ERROR,42601,"syntax error at or near ""146""",psql,client backend,,0
+2025-11-02 21:16:12.942 IST,admin,covertDB,214,::1:49740,6907703e.d6,15,idle,2025-11-02 20:22:46 IST,01-Aug,0,LOG,0,"statement: INSERT INTO transaction (user_id, amount, txn_type, status) VALUES (146, 1100.00, 'withdrawal', 'failed'),
+(147, 10500.00,'deposit', 'success'),
+(148, 12000.00,'transfer', 'success'),
+(149, 700.00,  'withdrawal', 'success'),
+(150, 9000.00, 'deposit', 'success'),
+(151, 3000.00, 'transfer', 'success'),
+(152, 2100.00, 'withdrawal', 'success'),
+(153, 8700.00, 'deposit', 'success');",psql,client backend,,0
+2025-11-02 21:16:12.945 IST,admin,covertDB,214,::1:49740,6907703e.d6,16,INSERT,2025-11-02 20:22:46 IST,01-Aug,0,ERROR,42P01,"relation ""transaction"" does not exist",psql,client backend,,0
+2025-11-02 21:16:38.344 IST,admin,covertDB,214,::1:49740,6907703e.d6,17,idle,2025-11-02 20:22:46 IST,01-Sep,0,LOG,0,"statement: INSERT INTO transactions (user_id, amount, txn_type, status) VALUES (146, 1100.00, 'withdrawal', 'failed'),
+(147, 10500.00,'deposit', 'success'),
+(148, 12000.00,'transfer', 'success'),
+(149, 700.00,  'withdrawal', 'success'),
+(150, 9000.00, 'deposit', 'success'),
+(151, 3000.00, 'transfer', 'success'),
+(152, 2100.00, 'withdrawal', 'success'),
+(153, 8700.00, 'deposit', 'success');",psql,client backend,,0
+2025-11-02 21:16:38.381 IST,admin,covertDB,214,::1:49740,6907703e.d6,18,INSERT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 36.809 ms,psql,client backend,,0
+2025-11-02 21:17:11.882 IST,,,31,,69074d6a.1f,11,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 21:17:12.743 IST,,,31,,69074d6a.1f,12,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 7 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.745 s, sync=0.037 s, total=0.862 s; sync files=8, longest=0.029 s, average=0.005 s; distance=19 kB, estimate=2889 kB; lsn=0/4316520, redo lsn=0/43164C8",,checkpointer,,0
+2025-11-02 21:18:45.279 IST,admin,covertDB,214,::1:49740,6907703e.d6,19,idle,2025-11-02 20:22:46 IST,01-Oct,0,LOG,0,statement: SELECT * FROM transactions;,psql,client backend,,0
+2025-11-02 21:18:45.281 IST,admin,covertDB,214,::1:49740,6907703e.d6,20,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 2.053 ms,psql,client backend,,0
+2025-11-02 21:19:29.665 IST,admin,covertDB,214,::1:49740,6907703e.d6,21,idle,2025-11-02 20:22:46 IST,01-Nov,0,LOG,0,statement: UPDATE transactions SET status = 'success' WHERE status = 'failed' AND amount < 1000;,psql,client backend,,0
+2025-11-02 21:19:29.703 IST,admin,covertDB,214,::1:49740,6907703e.d6,22,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 38.965 ms,psql,client backend,,0
+2025-11-02 21:19:43.404 IST,admin,covertDB,214,::1:49740,6907703e.d6,23,idle,2025-11-02 20:22:46 IST,01-Dec,0,LOG,0,statement: UPDATE transactions SET amount = amount + 500 WHERE amount > 8000;,psql,client backend,,0
+2025-11-02 21:19:43.443 IST,admin,covertDB,214,::1:49740,6907703e.d6,24,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 38.635 ms,psql,client backend,,0
+2025-11-02 21:19:49.812 IST,admin,covertDB,214,::1:49740,6907703e.d6,25,idle,2025-11-02 20:22:46 IST,Jan-13,0,LOG,0,"statement: UPDATE transactions SET txn_type = 'deposit' WHERE txn_id IN (17, 28);",psql,client backend,,0
+2025-11-02 21:19:49.824 IST,admin,covertDB,214,::1:49740,6907703e.d6,26,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 12.090 ms,psql,client backend,,0
+2025-11-02 21:19:58.136 IST,admin,covertDB,214,::1:49740,6907703e.d6,27,idle,2025-11-02 20:22:46 IST,Jan-14,0,LOG,0,statement: DELETE FROM transactions WHERE amount < 700;,psql,client backend,,0
+2025-11-02 21:19:58.142 IST,admin,covertDB,214,::1:49740,6907703e.d6,28,DELETE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 6.153 ms,psql,client backend,,0
+2025-11-02 21:20:05.177 IST,admin,covertDB,214,::1:49740,6907703e.d6,29,idle,2025-11-02 20:22:46 IST,Jan-15,0,LOG,0,statement: DELETE FROM transactions WHERE status = 'failed';,psql,client backend,,0
+2025-11-02 21:20:05.254 IST,admin,covertDB,214,::1:49740,6907703e.d6,30,DELETE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 77.329 ms,psql,client backend,,0
+2025-11-02 21:20:20.747 IST,admin,covertDB,214,::1:49740,6907703e.d6,31,idle,2025-11-02 20:22:46 IST,Jan-16,0,LOG,0,statement: ALTER TABLE transactions ADD COLUMN location VARCHAR(30);,psql,client backend,,0
+2025-11-02 21:20:20.785 IST,admin,covertDB,214,::1:49740,6907703e.d6,32,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 38.563 ms,psql,client backend,,0
+2025-11-02 21:20:29.205 IST,admin,covertDB,214,::1:49740,6907703e.d6,33,idle,2025-11-02 20:22:46 IST,Jan-17,0,LOG,0,statement: UPDATE transactions SET location = 'Pune' WHERE user_id BETWEEN 101 AND 115;,psql,client backend,,0
+2025-11-02 21:20:29.209 IST,admin,covertDB,214,::1:49740,6907703e.d6,34,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 7.026 ms,psql,client backend,,0
+2025-11-02 21:20:40.019 IST,admin,covertDB,214,::1:49740,6907703e.d6,35,idle,2025-11-02 20:22:46 IST,Jan-18,0,LOG,0,statement: UPDATE transactions SET location = 'Mumbai' WHERE user_id BETWEEN 116 AND 130;,psql,client backend,,0
+2025-11-02 21:20:40.024 IST,admin,covertDB,214,::1:49740,6907703e.d6,36,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 5.666 ms,psql,client backend,,0
+2025-11-02 21:20:47.560 IST,admin,covertDB,214,::1:49740,6907703e.d6,37,idle,2025-11-02 20:22:46 IST,Jan-19,0,LOG,0,statement: UPDATE transactions SET location = 'Delhi' WHERE user_id BETWEEN 131 AND 145;,psql,client backend,,0
+2025-11-02 21:20:47.565 IST,admin,covertDB,214,::1:49740,6907703e.d6,38,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 5.140 ms,psql,client backend,,0
+2025-11-02 21:20:56.249 IST,admin,covertDB,214,::1:49740,6907703e.d6,39,idle,2025-11-02 20:22:46 IST,Jan-20,0,LOG,0,statement: UPDATE transactions SET location = 'Hyderabad' WHERE user_id > 145;,psql,client backend,,0
+2025-11-02 21:20:56.253 IST,admin,covertDB,214,::1:49740,6907703e.d6,40,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 4.024 ms,psql,client backend,,0
+2025-11-02 21:21:51.475 IST,admin,covertDB,214,::1:49740,6907703e.d6,41,idle,2025-11-02 20:22:46 IST,Jan-21,0,LOG,0,statement: ALTER TABLE transactions RENAME COLUMN txn_type TO transaction_type;,psql,client backend,,0
+2025-11-02 21:21:51.538 IST,admin,covertDB,214,::1:49740,6907703e.d6,42,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 63.208 ms,psql,client backend,,0
+2025-11-02 21:22:01.932 IST,admin,covertDB,214,::1:49740,6907703e.d6,43,idle,2025-11-02 20:22:46 IST,Jan-22,0,LOG,0,statement: SELECT COUNT(*) FROM transactions WHERE status = 'success';,psql,client backend,,0
+2025-11-02 21:22:01.976 IST,admin,covertDB,214,::1:49740,6907703e.d6,44,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 44.629 ms,psql,client backend,,0
+2025-11-02 21:22:11.739 IST,,,31,,69074d6a.1f,13,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 21:22:12.830 IST,,,31,,69074d6a.1f,14,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 10 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.016 s, sync=0.047 s, total=1.091 s; sync files=9, longest=0.036 s, average=0.006 s; distance=53 kB, estimate=2605 kB; lsn=0/4323940, redo lsn=0/43238E8",,checkpointer,,0
+2025-11-02 21:27:54.585 IST,admin,covertDB,214,::1:49740,6907703e.d6,45,idle,2025-11-02 20:22:46 IST,Jan-23,0,LOG,0,"statement: SELECT transaction_type, COUNT(*), SUM(amount) 
+FROM transactions
+GROUP BY transaction_type;",psql,client backend,,0
+2025-11-02 21:27:54.592 IST,admin,covertDB,214,::1:49740,6907703e.d6,46,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 10.163 ms,psql,client backend,,0
+2025-11-02 21:28:29.923 IST,admin,covertDB,214,::1:49740,6907703e.d6,47,idle,2025-11-02 20:22:46 IST,Jan-24,0,LOG,0,"statement: SELECT user_id, SUM(amount) AS total_spent
+FROM transactions
+GROUP BY user_id
+ORDER BY total_spent DESC
+LIMIT 5;",psql,client backend,,0
+2025-11-02 21:28:29.925 IST,admin,covertDB,214,::1:49740,6907703e.d6,48,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 4.548 ms,psql,client backend,,0
+2025-11-02 21:29:14.115 IST,admin,covertDB,214,::1:49740,6907703e.d6,49,idle,2025-11-02 20:22:46 IST,Jan-25,0,LOG,0,statement: CREATE ROLE auditor LOGIN PASSWORD 'audit@123';,psql,client backend,,0
+2025-11-02 21:29:14.139 IST,admin,covertDB,214,::1:49740,6907703e.d6,50,CREATE ROLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 56.822 ms,psql,client backend,,0
+2025-11-02 21:29:20.630 IST,admin,covertDB,214,::1:49740,6907703e.d6,51,idle,2025-11-02 20:22:46 IST,Jan-26,0,LOG,0,statement: GRANT SELECT ON transactions TO auditor;,psql,client backend,,0
+2025-11-02 21:29:20.641 IST,admin,covertDB,214,::1:49740,6907703e.d6,52,GRANT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 11.600 ms,psql,client backend,,0
+2025-11-02 21:29:27.438 IST,admin,covertDB,214,::1:49740,6907703e.d6,53,idle,2025-11-02 20:22:46 IST,Jan-27,0,LOG,0,statement: REVOKE SELECT ON transactions FROM auditor;,psql,client backend,,0
+2025-11-02 21:29:27.448 IST,admin,covertDB,214,::1:49740,6907703e.d6,54,REVOKE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 10.652 ms,psql,client backend,,0
+2025-11-02 21:29:53.296 IST,admin,covertDB,214,::1:49740,6907703e.d6,55,idle,2025-11-02 20:22:46 IST,Jan-28,0,LOG,0,statement: BEGIN;,psql,client backend,,0
+2025-11-02 21:29:53.296 IST,admin,covertDB,214,::1:49740,6907703e.d6,56,BEGIN,2025-11-02 20:22:46 IST,Jan-28,0,LOG,0,duration: 0.142 ms,psql,client backend,,0
+2025-11-02 21:30:05.627 IST,admin,covertDB,214,::1:49740,6907703e.d6,57,idle in transaction,2025-11-02 20:22:46 IST,Jan-28,0,LOG,0,statement: UPDATE transactions SET amount = amount + 250 WHERE transaction_type = 'deposit';,psql,client backend,,0
+2025-11-02 21:30:05.628 IST,admin,covertDB,214,::1:49740,6907703e.d6,58,UPDATE,2025-11-02 20:22:46 IST,Jan-28,816,LOG,0,duration: 1.166 ms,psql,client backend,,0
+2025-11-02 21:30:14.400 IST,admin,covertDB,214,::1:49740,6907703e.d6,59,idle in transaction,2025-11-02 20:22:46 IST,Jan-28,816,LOG,0,statement: SAVEPOINT before_delete;,psql,client backend,,0
+2025-11-02 21:30:14.400 IST,admin,covertDB,214,::1:49740,6907703e.d6,60,SAVEPOINT,2025-11-02 20:22:46 IST,Jan-28,816,LOG,0,duration: 0.102 ms,psql,client backend,,0
+2025-11-02 21:30:22.744 IST,admin,covertDB,214,::1:49740,6907703e.d6,61,idle in transaction,2025-11-02 20:22:46 IST,Jan-28,816,LOG,0,statement: DELETE FROM transactions WHERE amount > 15000;,psql,client backend,,0
+2025-11-02 21:30:22.744 IST,admin,covertDB,214,::1:49740,6907703e.d6,62,DELETE,2025-11-02 20:22:46 IST,Jan-28,816,LOG,0,duration: 0.567 ms,psql,client backend,,0
+2025-11-02 21:30:29.679 IST,admin,covertDB,214,::1:49740,6907703e.d6,63,idle in transaction,2025-11-02 20:22:46 IST,Jan-28,816,LOG,0,statement: ROLLBACK TO before_delete;,psql,client backend,,0
+2025-11-02 21:30:29.680 IST,admin,covertDB,214,::1:49740,6907703e.d6,64,ROLLBACK,2025-11-02 20:22:46 IST,Jan-28,816,LOG,0,duration: 0.385 ms,psql,client backend,,0
+2025-11-02 21:30:35.501 IST,admin,covertDB,214,::1:49740,6907703e.d6,65,idle in transaction,2025-11-02 20:22:46 IST,Jan-28,816,LOG,0,statement: COMMIT;,psql,client backend,,0
+2025-11-02 21:30:35.505 IST,admin,covertDB,214,::1:49740,6907703e.d6,66,COMMIT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 4.113 ms,psql,client backend,,0
+2025-11-02 21:30:52.557 IST,admin,covertDB,214,::1:49740,6907703e.d6,67,idle,2025-11-02 20:22:46 IST,Jan-29,0,LOG,0,"statement: CREATE VIEW deposit_summary AS
+SELECT user_id, SUM(amount) AS total_deposit
+FROM transactions
+WHERE transaction_type = 'deposit'
+GROUP BY user_id;",psql,client backend,,0
+2025-11-02 21:30:52.616 IST,admin,covertDB,214,::1:49740,6907703e.d6,68,CREATE VIEW,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 59.047 ms,psql,client backend,,0
+2025-11-02 21:30:59.549 IST,admin,covertDB,214,::1:49740,6907703e.d6,69,idle,2025-11-02 20:22:46 IST,Jan-30,0,LOG,0,statement: SELECT * FROM deposit_summary;,psql,client backend,,0
+2025-11-02 21:30:59.550 IST,admin,covertDB,214,::1:49740,6907703e.d6,70,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.585 ms,psql,client backend,,0
+2025-11-02 21:32:21.237 IST,admin,covertDB,214,::1:49740,6907703e.d6,71,idle,2025-11-02 20:22:46 IST,Jan-31,0,LOG,0,statement: CREATE INDEX idx_userid ON transactions(user_id);,psql,client backend,,0
+2025-11-02 21:32:21.249 IST,admin,covertDB,214,::1:49740,6907703e.d6,72,CREATE INDEX,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 11.637 ms,psql,client backend,,0
+2025-11-02 21:32:26.319 IST,,,31,,69074d6a.1f,15,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 21:32:28.370 IST,admin,covertDB,214,::1:49740,6907703e.d6,73,idle,2025-11-02 20:22:46 IST,Jan-32,0,LOG,0,statement: CREATE INDEX idx_status ON transactions(status);,psql,client backend,,0
+2025-11-02 21:32:28.383 IST,admin,covertDB,214,::1:49740,6907703e.d6,74,CREATE INDEX,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 12.705 ms,psql,client backend,,0
+2025-11-02 21:32:30.148 IST,,,31,,69074d6a.1f,16,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 37 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=3.748 s, sync=0.040 s, total=3.830 s; sync files=31, longest=0.007 s, average=0.002 s; distance=166 kB, estimate=2361 kB; lsn=0/435ECF8, redo lsn=0/434D450",,checkpointer,,0
+2025-11-02 21:36:46.650 IST,admin,covertDB,214,::1:49740,6907703e.d6,75,idle,2025-11-02 20:22:46 IST,Jan-33,0,LOG,0,statement: SELECT * FROM transactions;,psql,client backend,,0
+2025-11-02 21:36:46.654 IST,admin,covertDB,214,::1:49740,6907703e.d6,76,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 3.544 ms,psql,client backend,,0
+2025-11-02 21:37:06.674 IST,admin,covertDB,214,::1:49740,6907703e.d6,77,idle,2025-11-02 20:22:46 IST,Jan-34,0,LOG,0,statement: SELECT * FROM transactions WHERE txn_type = 'deposit' AND status = 'success';,psql,client backend,,0
+2025-11-02 21:37:06.675 IST,admin,covertDB,214,::1:49740,6907703e.d6,78,SELECT,2025-11-02 20:22:46 IST,Jan-34,0,ERROR,42703,"column ""txn_type"" does not exist",psql,client backend,,0
+2025-11-02 21:37:26.132 IST,,,31,,69074d6a.1f,17,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 21:37:27.547 IST,,,31,,69074d6a.1f,18,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 13 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.318 s, sync=0.047 s, total=1.416 s; sync files=12, longest=0.037 s, average=0.004 s; distance=93 kB, estimate=2134 kB; lsn=0/4364900, redo lsn=0/43648A8",,checkpointer,,0
+2025-11-02 21:37:29.796 IST,admin,covertDB,214,::1:49740,6907703e.d6,79,idle,2025-11-02 20:22:46 IST,Jan-35,0,LOG,0,statement: SELECT * FROM transactions;,psql,client backend,,0
+2025-11-02 21:37:29.796 IST,admin,covertDB,214,::1:49740,6907703e.d6,80,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.519 ms,psql,client backend,,0
+2025-11-02 21:37:44.140 IST,admin,covertDB,214,::1:49740,6907703e.d6,81,idle,2025-11-02 20:22:46 IST,Jan-36,0,LOG,0,statement: SELECT * FROM transactions WHERE status = 'failed';,psql,client backend,,0
+2025-11-02 21:37:44.142 IST,admin,covertDB,214,::1:49740,6907703e.d6,82,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.270 ms,psql,client backend,,0
+2025-11-02 21:38:31.023 IST,admin,covertDB,214,::1:49740,6907703e.d6,83,idle,2025-11-02 20:22:46 IST,Jan-37,0,LOG,0,statement: SELECT * FROM transactions WHERE user_id = 120;,psql,client backend,,0
+2025-11-02 21:38:31.024 IST,admin,covertDB,214,::1:49740,6907703e.d6,84,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.776 ms,psql,client backend,,0
+2025-11-02 21:38:49.020 IST,admin,covertDB,214,::1:49740,6907703e.d6,85,idle,2025-11-02 20:22:46 IST,Jan-38,0,LOG,0,statement: SELECT * FROM transactions WHERE txn_date >= NOW() - INTERVAL '7 days';,psql,client backend,,0
+2025-11-02 21:38:49.027 IST,admin,covertDB,214,::1:49740,6907703e.d6,86,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 6.272 ms,psql,client backend,,0
+2025-11-02 21:40:44.321 IST,admin,covertDB,214,::1:49740,6907703e.d6,87,idle,2025-11-02 20:22:46 IST,Jan-39,0,LOG,0,"statement: SELECT transaction_id, user_id, amount FROM transactions;",psql,client backend,,0
+2025-11-02 21:40:44.321 IST,admin,covertDB,214,::1:49740,6907703e.d6,88,SELECT,2025-11-02 20:22:46 IST,Jan-39,0,ERROR,42703,"column ""transaction_id"" does not exist",psql,client backend,,0
+2025-11-02 21:41:15.723 IST,admin,covertDB,214,::1:49740,6907703e.d6,89,idle,2025-11-02 20:22:46 IST,Jan-40,0,LOG,0,"statement: SELECT txn_id, user_id, amount FROM transactions;",psql,client backend,,0
+2025-11-02 21:41:15.723 IST,admin,covertDB,214,::1:49740,6907703e.d6,90,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.748 ms,psql,client backend,,0
+2025-11-02 21:41:24.833 IST,admin,covertDB,214,::1:49740,6907703e.d6,91,idle,2025-11-02 20:22:46 IST,Jan-41,0,LOG,0,statement: SELECT DISTINCT user_id FROM transactions;,psql,client backend,,0
+2025-11-02 21:41:24.834 IST,admin,covertDB,214,::1:49740,6907703e.d6,92,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.473 ms,psql,client backend,,0
+2025-11-02 21:41:44.602 IST,admin,covertDB,214,::1:49740,6907703e.d6,93,idle,2025-11-02 20:22:46 IST,Jan-42,0,LOG,0,"statement: SELECT user_id, SUM(amount) AS total_spent 
+FROM transactions 
+GROUP BY user_id 
+HAVING SUM(amount) > 10000;",psql,client backend,,0
+2025-11-02 21:41:44.603 IST,admin,covertDB,214,::1:49740,6907703e.d6,94,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.315 ms,psql,client backend,,0
+2025-11-02 21:42:00.313 IST,admin,covertDB,214,::1:49740,6907703e.d6,95,idle,2025-11-02 20:22:46 IST,Jan-43,0,LOG,0,"statement: SELECT * FROM transactions 
+WHERE amount > (SELECT AVG(amount) FROM transactions);",psql,client backend,,0
+2025-11-02 21:42:00.351 IST,admin,covertDB,214,::1:49740,6907703e.d6,96,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 38.069 ms,psql,client backend,,0
+2025-11-02 21:43:52.861 IST,admin,covertDB,214,::1:49740,6907703e.d6,97,idle,2025-11-02 20:22:46 IST,Jan-44,0,LOG,0,"statement: SELECT user_id, amount 
+FROM transactions 
+WHERE amount IN (SELECT MAX(amount) FROM transactions GROUP BY user_id);",psql,client backend,,0
+2025-11-02 21:43:52.892 IST,admin,covertDB,214,::1:49740,6907703e.d6,98,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 30.252 ms,psql,client backend,,0
+2025-11-02 21:44:15.373 IST,admin,covertDB,214,::1:49740,6907703e.d6,99,idle,2025-11-02 20:22:46 IST,Jan-45,0,LOG,0,"statement: SELECT user_id FROM transactions 
+GROUP BY user_id 
+HAVING SUM(amount) = (SELECT MAX(total) FROM (SELECT SUM(amount) AS total FROM transactions GROUP BY user_id) AS totals);",psql,client backend,,0
+2025-11-02 21:44:15.407 IST,admin,covertDB,214,::1:49740,6907703e.d6,100,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 34.463 ms,psql,client backend,,0
+2025-11-02 21:52:45.831 IST,admin,covertDB,214,::1:49740,6907703e.d6,101,idle,2025-11-02 20:22:46 IST,Jan-46,0,LOG,0,statement: UPDATE transactions SET status = 'SUCCESS' WHERE status = 'PENDING';,psql,client backend,,0
+2025-11-02 21:52:45.832 IST,admin,covertDB,214,::1:49740,6907703e.d6,102,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.337 ms,psql,client backend,,0
+2025-11-02 21:52:55.368 IST,admin,covertDB,214,::1:49740,6907703e.d6,103,idle,2025-11-02 20:22:46 IST,Jan-47,0,LOG,0,statement: UPDATE transactions SET amount = amount + 50 WHERE payment_method = 'CARD';,psql,client backend,,0
+2025-11-02 21:52:55.368 IST,admin,covertDB,214,::1:49740,6907703e.d6,104,UPDATE,2025-11-02 20:22:46 IST,Jan-47,0,ERROR,42703,"column ""payment_method"" does not exist",psql,client backend,,0
+2025-11-02 21:53:18.039 IST,admin,covertDB,214,::1:49740,6907703e.d6,105,idle,2025-11-02 20:22:46 IST,Jan-48,0,LOG,0,statement: DELETE FROM transactions WHERE amount < 10;,psql,client backend,,0
+2025-11-02 21:53:18.040 IST,admin,covertDB,214,::1:49740,6907703e.d6,106,DELETE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.679 ms,psql,client backend,,0
+2025-11-02 21:53:58.991 IST,admin,covertDB,214,::1:49740,6907703e.d6,107,idle,2025-11-02 20:22:46 IST,Jan-49,0,LOG,0,statement: DELETE FROM transactions WHERE status = 'FAILED';,psql,client backend,,0
+2025-11-02 21:53:58.991 IST,admin,covertDB,214,::1:49740,6907703e.d6,108,DELETE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.582 ms,psql,client backend,,0
+2025-11-02 21:54:54.947 IST,admin,covertDB,214,::1:49740,6907703e.d6,109,idle,2025-11-02 20:22:46 IST,Jan-50,0,LOG,0,statement: SELECT * FROM transactions LIMIT 10;,psql,client backend,,0
+2025-11-02 21:54:54.948 IST,admin,covertDB,214,::1:49740,6907703e.d6,110,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.873 ms,psql,client backend,,0
+2025-11-02 21:55:01.232 IST,admin,covertDB,214,::1:49740,6907703e.d6,111,idle,2025-11-02 20:22:46 IST,Jan-51,0,LOG,0,statement: SELECT * FROM transactions OFFSET 20 LIMIT 10;,psql,client backend,,0
+2025-11-02 21:55:01.232 IST,admin,covertDB,214,::1:49740,6907703e.d6,112,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.535 ms,psql,client backend,,0
+2025-11-02 21:55:07.932 IST,admin,covertDB,214,::1:49740,6907703e.d6,113,idle,2025-11-02 20:22:46 IST,Jan-52,0,LOG,0,statement: SELECT * FROM transactions WHERE payment_method LIKE '%CARD%';,psql,client backend,,0
+2025-11-02 21:55:07.933 IST,admin,covertDB,214,::1:49740,6907703e.d6,114,SELECT,2025-11-02 20:22:46 IST,Jan-52,0,ERROR,42703,"column ""payment_method"" does not exist",psql,client backend,,0
+2025-11-02 22:02:34.963 IST,admin,covertDB,214,::1:49740,6907703e.d6,115,idle,2025-11-02 20:22:46 IST,Jan-53,0,LOG,0,"statement: SELECT txn_id, user_id, amount FROM transactions;",psql,client backend,,0
+2025-11-02 22:02:34.964 IST,admin,covertDB,214,::1:49740,6907703e.d6,116,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.790 ms,psql,client backend,,0
+2025-11-02 22:02:51.589 IST,admin,covertDB,214,::1:49740,6907703e.d6,117,idle,2025-11-02 20:22:46 IST,Jan-54,0,LOG,0,statement: UPDATE transactions SET status = 'success' WHERE status = 'pending';,psql,client backend,,0
+2025-11-02 22:02:51.589 IST,admin,covertDB,214,::1:49740,6907703e.d6,118,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.846 ms,psql,client backend,,0
+2025-11-02 22:02:58.408 IST,admin,covertDB,214,::1:49740,6907703e.d6,119,idle,2025-11-02 20:22:46 IST,Jan-55,0,LOG,0,statement: UPDATE transactions SET amount = amount + 100 WHERE location = 'Delhi';,psql,client backend,,0
+2025-11-02 22:02:58.433 IST,admin,covertDB,214,::1:49740,6907703e.d6,120,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 24.705 ms,psql,client backend,,0
+2025-11-02 22:03:04.838 IST,admin,covertDB,214,::1:49740,6907703e.d6,121,idle,2025-11-02 20:22:46 IST,Jan-56,0,LOG,0,statement: DELETE FROM transactions WHERE status = 'failed';,psql,client backend,,0
+2025-11-02 22:03:04.838 IST,admin,covertDB,214,::1:49740,6907703e.d6,122,DELETE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.559 ms,psql,client backend,,0
+2025-11-02 22:03:18.012 IST,admin,covertDB,214,::1:49740,6907703e.d6,123,idle,2025-11-02 20:22:46 IST,Jan-57,0,LOG,0,statement: DELETE FROM transactions WHERE amount < 5000;,psql,client backend,,0
+2025-11-02 22:03:18.048 IST,admin,covertDB,214,::1:49740,6907703e.d6,124,DELETE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 36.807 ms,psql,client backend,,0
+2025-11-02 22:03:25.848 IST,admin,covertDB,214,::1:49740,6907703e.d6,125,idle,2025-11-02 20:22:46 IST,Jan-58,0,LOG,0,statement: DELETE FROM transactions WHERE txn_date < '2025-01-01';,psql,client backend,,0
+2025-11-02 22:03:25.852 IST,admin,covertDB,214,::1:49740,6907703e.d6,126,DELETE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 4.052 ms,psql,client backend,,0
+2025-11-02 22:03:34.998 IST,admin,covertDB,214,::1:49740,6907703e.d6,127,idle,2025-11-02 20:22:46 IST,Jan-59,0,LOG,0,statement: ALTER TABLE transactions ADD COLUMN remarks TEXT;,psql,client backend,,0
+2025-11-02 22:03:35.009 IST,admin,covertDB,214,::1:49740,6907703e.d6,128,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 11.446 ms,psql,client backend,,0
+2025-11-02 22:03:42.641 IST,admin,covertDB,214,::1:49740,6907703e.d6,129,idle,2025-11-02 20:22:46 IST,Jan-60,0,LOG,0,statement: ALTER TABLE transactions RENAME COLUMN txn_date TO transaction_date;,psql,client backend,,0
+2025-11-02 22:03:42.672 IST,admin,covertDB,214,::1:49740,6907703e.d6,130,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 31.120 ms,psql,client backend,,0
+2025-11-02 22:03:53.298 IST,admin,covertDB,214,::1:49740,6907703e.d6,131,idle,2025-11-02 20:22:46 IST,Jan-61,0,LOG,0,"statement: SELECT DATE(txn_date) AS txn_day, SUM(amount) FROM transactions GROUP BY txn_day ORDER BY txn_day;",psql,client backend,,0
+2025-11-02 22:03:53.299 IST,admin,covertDB,214,::1:49740,6907703e.d6,132,SELECT,2025-11-02 20:22:46 IST,Jan-61,0,ERROR,42703,"column ""txn_date"" does not exist",psql,client backend,,0
+2025-11-02 22:04:07.697 IST,admin,covertDB,214,::1:49740,6907703e.d6,133,idle,2025-11-02 20:22:46 IST,Jan-62,0,LOG,0,"statement: SELECT EXTRACT(MONTH FROM txn_date) AS txn_month, SUM(amount) AS monthly_total FROM transactions GROUP BY txn_month;",psql,client backend,,0
+2025-11-02 22:04:07.697 IST,admin,covertDB,214,::1:49740,6907703e.d6,134,SELECT,2025-11-02 20:22:46 IST,Jan-62,0,ERROR,42703,"column ""txn_date"" does not exist",psql,client backend,,0
+2025-11-02 22:04:17.863 IST,admin,covertDB,214,::1:49740,6907703e.d6,135,idle,2025-11-02 20:22:46 IST,Jan-63,0,LOG,0,"statement: ALTER TABLE transactions ALTER COLUMN amount TYPE DECIMAL(12,2);",psql,client backend,,0
+2025-11-02 22:04:17.868 IST,admin,covertDB,214,::1:49740,6907703e.d6,136,ALTER TABLE,2025-11-02 20:22:46 IST,Jan-63,825,ERROR,0A000,cannot alter type of a column used by a view or rule,psql,client backend,,0
+2025-11-02 22:04:22.664 IST,admin,covertDB,214,::1:49740,6907703e.d6,137,idle,2025-11-02 20:22:46 IST,Jan-64,0,LOG,0,statement: ALTER TABLE transactions RENAME COLUMN txn_date TO transaction_date;,psql,client backend,,0
+2025-11-02 22:04:22.665 IST,admin,covertDB,214,::1:49740,6907703e.d6,138,ALTER TABLE,2025-11-02 20:22:46 IST,Jan-64,826,ERROR,42703,"column ""txn_date"" does not exist",psql,client backend,,0
+2025-11-02 22:04:30.290 IST,admin,covertDB,214,::1:49740,6907703e.d6,139,idle,2025-11-02 20:22:46 IST,Jan-65,0,LOG,0,statement: ALTER TABLE transactions DROP COLUMN remarks;,psql,client backend,,0
+2025-11-02 22:04:30.307 IST,admin,covertDB,214,::1:49740,6907703e.d6,140,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 48.673 ms,psql,client backend,,0
+2025-11-02 22:04:40.974 IST,admin,covertDB,214,::1:49740,6907703e.d6,141,idle,2025-11-02 20:22:46 IST,Jan-66,0,LOG,0,statement: SELECT * FROM transactions WHERE location LIKE 'M%';,psql,client backend,,0
+2025-11-02 22:04:40.978 IST,admin,covertDB,214,::1:49740,6907703e.d6,142,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 3.411 ms,psql,client backend,,0
+2025-11-02 22:04:47.553 IST,admin,covertDB,214,::1:49740,6907703e.d6,143,idle,2025-11-02 20:22:46 IST,Jan-67,0,LOG,0,statement: SELECT * FROM transactions WHERE transaction_type LIKE '%pay%';,psql,client backend,,0
+2025-11-02 22:04:47.554 IST,admin,covertDB,214,::1:49740,6907703e.d6,144,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.479 ms,psql,client backend,,0
+2025-11-02 22:04:53.317 IST,admin,covertDB,214,::1:49740,6907703e.d6,145,idle,2025-11-02 20:22:46 IST,Jan-68,0,LOG,0,statement: SELECT * FROM transactions WHERE CAST(amount AS TEXT) LIKE '12%';,psql,client backend,,0
+2025-11-02 22:04:53.318 IST,admin,covertDB,214,::1:49740,6907703e.d6,146,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.173 ms,psql,client backend,,0
+2025-11-02 22:05:07.446 IST,admin,covertDB,214,::1:49740,6907703e.d6,147,idle,2025-11-02 20:22:46 IST,Jan-69,0,LOG,0,"statement: SELECT location, COUNT(*) AS txn_count FROM transactions GROUP BY location ORDER BY txn_count DESC;",psql,client backend,,0
+2025-11-02 22:05:07.448 IST,admin,covertDB,214,::1:49740,6907703e.d6,148,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.851 ms,psql,client backend,,0
+2025-11-02 22:05:14.107 IST,admin,covertDB,214,::1:49740,6907703e.d6,149,idle,2025-11-02 20:22:46 IST,Jan-70,0,LOG,0,"statement: SELECT location, AVG(amount) AS avg_txn FROM transactions GROUP BY location;",psql,client backend,,0
+2025-11-02 22:05:14.108 IST,admin,covertDB,214,::1:49740,6907703e.d6,150,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.679 ms,psql,client backend,,0
+2025-11-02 22:05:21.983 IST,admin,covertDB,214,::1:49740,6907703e.d6,151,idle,2025-11-02 20:22:46 IST,Jan-71,0,LOG,0,"statement: SELECT location, SUM(amount) AS total_spent FROM transactions GROUP BY location HAVING SUM(amount) > 50000;",psql,client backend,,0
+2025-11-02 22:05:21.984 IST,admin,covertDB,214,::1:49740,6907703e.d6,152,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.135 ms,psql,client backend,,0
+2025-11-02 22:05:55.824 IST,,,31,,69074d6a.1f,19,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 22:05:58.435 IST,,,31,,69074d6a.1f,20,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 25 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.534 s, sync=0.026 s, total=2.612 s; sync files=24, longest=0.005 s, average=0.002 s; distance=136 kB, estimate=1934 kB; lsn=0/4386AC8, redo lsn=0/4386A70",,checkpointer,,0
+2025-11-02 22:07:26.240 IST,admin,covertDB,214,::1:49740,6907703e.d6,153,idle,2025-11-02 20:22:46 IST,Jan-72,0,LOG,0,"statement: SELECT transaction_type, COUNT(*) AS txn_count FROM transactions GROUP BY transaction_type;",psql,client backend,,0
+2025-11-02 22:07:26.241 IST,admin,covertDB,214,::1:49740,6907703e.d6,154,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.616 ms,psql,client backend,,0
+2025-11-02 22:07:38.294 IST,admin,covertDB,214,::1:49740,6907703e.d6,155,idle,2025-11-02 20:22:46 IST,Jan-73,0,LOG,0,"statement: SELECT transaction_type, SUM(amount) AS total_amount FROM transactions GROUP BY transaction_type;",psql,client backend,,0
+2025-11-02 22:07:38.294 IST,admin,covertDB,214,::1:49740,6907703e.d6,156,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.562 ms,psql,client backend,,0
+2025-11-02 22:07:49.851 IST,admin,covertDB,214,::1:49740,6907703e.d6,157,idle,2025-11-02 20:22:46 IST,Jan-74,0,LOG,0,"statement: SELECT transaction_type, AVG(amount) AS avg_amt, MAX(amount) AS max_amt, MIN(amount) AS min_amt FROM transactions GROUP BY transaction_type;",psql,client backend,,0
+2025-11-02 22:07:49.852 IST,admin,covertDB,214,::1:49740,6907703e.d6,158,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.864 ms,psql,client backend,,0
+2025-11-02 22:08:13.899 IST,admin,covertDB,214,::1:49740,6907703e.d6,159,idle,2025-11-02 20:22:46 IST,Jan-75,0,LOG,0,"statement: SELECT user_id, SUM(amount) AS total_spent, COUNT(*) AS txn_count
+FROM transactions
+WHERE status = 'success'
+GROUP BY user_id
+HAVING COUNT(*) > 3;",psql,client backend,,0
+2025-11-02 22:08:13.900 IST,admin,covertDB,214,::1:49740,6907703e.d6,160,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.122 ms,psql,client backend,,0
+2025-11-02 22:08:21.410 IST,admin,covertDB,214,::1:49740,6907703e.d6,161,idle,2025-11-02 20:22:46 IST,Jan-76,0,LOG,0,"statement: SELECT EXTRACT(HOUR FROM txn_date) AS txn_hour, COUNT(*) FROM transactions GROUP BY txn_hour;",psql,client backend,,0
+2025-11-02 22:08:21.410 IST,admin,covertDB,214,::1:49740,6907703e.d6,162,SELECT,2025-11-02 20:22:46 IST,Jan-76,0,ERROR,42703,"column ""txn_date"" does not exist",psql,client backend,,0
+2025-11-02 22:08:29.857 IST,admin,covertDB,214,::1:49740,6907703e.d6,163,idle,2025-11-02 20:22:46 IST,Jan-77,0,LOG,0,statement: SELECT * FROM transactions LIMIT 20;,psql,client backend,,0
+2025-11-02 22:08:29.858 IST,admin,covertDB,214,::1:49740,6907703e.d6,164,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.695 ms,psql,client backend,,0
+2025-11-02 22:08:37.369 IST,admin,covertDB,214,::1:49740,6907703e.d6,165,idle,2025-11-02 20:22:46 IST,Jan-78,0,LOG,0,statement: SELECT * FROM transactions OFFSET 10 LIMIT 10;,psql,client backend,,0
+2025-11-02 22:08:37.369 IST,admin,covertDB,214,::1:49740,6907703e.d6,166,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.463 ms,psql,client backend,,0
+2025-11-02 22:08:45.403 IST,admin,covertDB,214,::1:49740,6907703e.d6,167,idle,2025-11-02 20:22:46 IST,Jan-79,0,LOG,0,"statement: CREATE VIEW high_value_txns AS
+SELECT txn_id, user_id, amount, transaction_type, location
+FROM transactions
+WHERE amount > 15000;",psql,client backend,,0
+2025-11-02 22:08:45.450 IST,admin,covertDB,214,::1:49740,6907703e.d6,168,CREATE VIEW,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 47.489 ms,psql,client backend,,0
+2025-11-02 22:08:50.696 IST,admin,covertDB,214,::1:49740,6907703e.d6,169,idle,2025-11-02 20:22:46 IST,Jan-80,0,LOG,0,statement: SELECT * FROM high_value_txns;,psql,client backend,,0
+2025-11-02 22:08:50.696 IST,admin,covertDB,214,::1:49740,6907703e.d6,170,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.617 ms,psql,client backend,,0
+2025-11-02 22:08:57.879 IST,admin,covertDB,214,::1:49740,6907703e.d6,171,idle,2025-11-02 20:22:46 IST,Jan-81,0,LOG,0,statement: CREATE INDEX idx_user_id ON transactions(user_id);,psql,client backend,,0
+2025-11-02 22:08:57.907 IST,admin,covertDB,214,::1:49740,6907703e.d6,172,CREATE INDEX,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 28.999 ms,psql,client backend,,0
+2025-11-02 22:09:04.244 IST,admin,covertDB,214,::1:49740,6907703e.d6,173,idle,2025-11-02 20:22:46 IST,Jan-82,0,LOG,0,statement: CREATE INDEX idx_location ON transactions(location);,psql,client backend,,0
+2025-11-02 22:09:04.251 IST,admin,covertDB,214,::1:49740,6907703e.d6,174,CREATE INDEX,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 7.829 ms,psql,client backend,,0
+2025-11-02 22:09:11.359 IST,admin,covertDB,214,::1:49740,6907703e.d6,175,idle,2025-11-02 20:22:46 IST,Jan-83,0,LOG,0,statement: ALTER TABLE transactions ADD CONSTRAINT chk_amount CHECK (amount > 0);,psql,client backend,,0
+2025-11-02 22:09:11.398 IST,admin,covertDB,214,::1:49740,6907703e.d6,176,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 38.966 ms,psql,client backend,,0
+2025-11-02 22:10:55.506 IST,,,31,,69074d6a.1f,21,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 22:10:58.583 IST,,,31,,69074d6a.1f,22,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 29 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.937 s, sync=0.068 s, total=3.078 s; sync files=28, longest=0.039 s, average=0.003 s; distance=149 kB, estimate=1756 kB; lsn=0/43ABFB0, redo lsn=0/43ABF58",,checkpointer,,0
+2025-11-02 22:15:41.551 IST,admin,covertDB,214,::1:49740,6907703e.d6,177,idle,2025-11-02 20:22:46 IST,Jan-84,0,LOG,0,statement: SELECT * FROM employees;,psql,client backend,,0
+2025-11-02 22:15:41.553 IST,admin,covertDB,214,::1:49740,6907703e.d6,178,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 2.744 ms,psql,client backend,,0
+2025-11-02 22:16:06.902 IST,admin,covertDB,214,::1:49740,6907703e.d6,179,idle,2025-11-02 20:22:46 IST,Jan-85,0,ERROR,42601,"syntax error at or near ""'Vikas Nair'""",psql,client backend,,0
+2025-11-02 22:16:40.088 IST,admin,covertDB,214,::1:49740,6907703e.d6,180,idle,2025-11-02 20:22:46 IST,Jan-86,0,LOG,0,"statement: INSERT INTO employees (emp_name, department, salary) VALUES ('Vikas Nair', 'Operations', 47000), ('Anjali Rao', 'Sales', 58000), ('Suresh Kumar', 'IT', 62000), ('Divya Singh', 'Finance', 57000), ('Ramesh Gupta', 'Sales', 50000), ('Kiran Patil', 'IT', 63000), ('Sneha Joshi', 'HR', 46000);",psql,client backend,,0
+2025-11-02 22:16:40.127 IST,admin,covertDB,214,::1:49740,6907703e.d6,181,INSERT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 39.017 ms,psql,client backend,,0
+2025-11-02 22:16:53.024 IST,admin,covertDB,214,::1:49740,6907703e.d6,182,idle,2025-11-02 20:22:46 IST,Jan-87,0,ERROR,42601,"syntax error at or near ""'Aditya Shah'""",psql,client backend,,0
+2025-11-02 22:17:17.492 IST,admin,covertDB,214,::1:49740,6907703e.d6,183,idle,2025-11-02 20:22:46 IST,Jan-88,0,LOG,0,"statement: INSERT INTO employees (emp_name, department, salary) VALUES ('Aditya Shah', 'Operations', 49000), ('Meena Iyer', 'Finance', 61000), ('Raj Malhotra', 'Marketing', 52000), ('Tina Kapoor', 'Sales', 54000), ('Karthik Menon', 'IT', 65000), ('Nikita Agarwal', 'Finance', 58000), ('Amit Verma', 'Operations', 48000), ('Ravi Deshmukh', 'IT', 70000), ('Pooja Kulkarni', 'Marketing', 53000), ('Nisha Jain', 'HR', 46000);",psql,client backend,,0
+2025-11-02 22:17:17.528 IST,admin,covertDB,214,::1:49740,6907703e.d6,184,INSERT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 36.016 ms,psql,client backend,,0
+2025-11-02 22:18:02.171 IST,admin,covertDB,214,::1:49740,6907703e.d6,185,idle,2025-11-02 20:22:46 IST,Jan-89,0,LOG,0,"statement: INSERT INTO employees (emp_name, department, salary) VALUES ('Varun Reddy', 'Finance', 59000), ('Snehal More', 'Sales', 51000), ('Rajesh Tiwari', 'Operations', 50000), ('Sakshi Bhatia', 'IT', 64000), ('Harish Naik', 'Finance', 61000), ('Asha Patil', 'Sales', 52000), ('Deepak Singh', 'IT', 68000), ('Tanvi Joshi', 'HR', 45000), ('Gaurav Sharma', 'Operations', 49000), ('Rahul Jadhav', 'Finance', 60000), ('Sanjana Nair', 'Sales', 53000), ('Ankit Patel', 'IT', 66000);",psql,client backend,,0
+2025-11-02 22:18:02.208 IST,admin,covertDB,214,::1:49740,6907703e.d6,186,INSERT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 37.969 ms,psql,client backend,,0
+2025-11-02 22:18:30.815 IST,admin,covertDB,214,::1:49740,6907703e.d6,187,idle,2025-11-02 20:22:46 IST,Jan-90,0,LOG,0,"statement: INSERT INTO employees (emp_name, department, salary) VALUES ('Komal Ghosh', 'Finance', 62000), ('Vivek Rao', 'Marketing', 51000), ('Ritu Mishra', 'Operations', 47000), ('Manish Gupta', 'Finance', 64000), ('Akash Yadav', 'IT', 69000), ('Sonal Jain', 'HR', 44000), ('Abhay Kulkarni', 'Sales', 56000), ('Kavita More', 'Finance', 63000), ('Pritesh Shah', 'IT', 71000), ('Deepa Desai', 'Marketing', 52000), ('Amol Rane', 'Operations', 48000), ('Nivedita Sharma', 'Finance', 60500), ('Rohit Chauhan', 'IT', 67500), ('Vandana Shetty', 'Sales', 55500), ('Sumit Joshi', 'IT', 66500), ('Kiran Shewale', 'Finance', 63500), ('Shreya Pandey', 'Marketing', 54500), ('Anuj Borkar', 'Operations', 49500);",psql,client backend,,0
+2025-11-02 22:18:30.821 IST,admin,covertDB,214,::1:49740,6907703e.d6,188,INSERT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 5.331 ms,psql,client backend,,0
+2025-11-02 22:18:40.512 IST,admin,covertDB,214,::1:49740,6907703e.d6,189,idle,2025-11-02 20:22:46 IST,Jan-91,0,LOG,0,statement: SELECT * FROM employees;,psql,client backend,,0
+2025-11-02 22:18:40.512 IST,admin,covertDB,214,::1:49740,6907703e.d6,190,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.623 ms,psql,client backend,,0
+2025-11-02 22:21:03.611 IST,,,31,,69074d6a.1f,23,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 22:21:04.777 IST,,,31,,69074d6a.1f,24,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 11 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.114 s, sync=0.028 s, total=1.167 s; sync files=8, longest=0.008 s, average=0.004 s; distance=53 kB, estimate=1586 kB; lsn=0/43B96C0, redo lsn=0/43B9668",,checkpointer,,0
+2025-11-02 22:27:23.324 IST,admin,covertDB,214,::1:49740,6907703e.d6,191,idle,2025-11-02 20:22:46 IST,Jan-92,0,LOG,0,"statement: SELECT emp_id, emp_name, department FROM employees;",psql,client backend,,0
+2025-11-02 22:27:23.326 IST,admin,covertDB,214,::1:49740,6907703e.d6,192,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.898 ms,psql,client backend,,0
+2025-11-02 22:27:35.735 IST,admin,covertDB,214,::1:49740,6907703e.d6,193,idle,2025-11-02 20:22:46 IST,Jan-93,0,LOG,0,"statement: SELECT emp_name, salary FROM employees;",psql,client backend,,0
+2025-11-02 22:27:35.736 IST,admin,covertDB,214,::1:49740,6907703e.d6,194,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.786 ms,psql,client backend,,0
+2025-11-02 22:27:46.238 IST,admin,covertDB,214,::1:49740,6907703e.d6,195,idle,2025-11-02 20:22:46 IST,Jan-94,0,LOG,0,statement: SELECT DISTINCT department FROM employees;,psql,client backend,,0
+2025-11-02 22:27:46.238 IST,admin,covertDB,214,::1:49740,6907703e.d6,196,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.052 ms,psql,client backend,,0
+2025-11-02 22:27:58.179 IST,admin,covertDB,214,::1:49740,6907703e.d6,197,idle,2025-11-02 20:22:46 IST,Jan-95,0,LOG,0,"statement: SELECT emp_name, department FROM employees ORDER BY emp_name;",psql,client backend,,0
+2025-11-02 22:27:58.179 IST,admin,covertDB,214,::1:49740,6907703e.d6,198,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.559 ms,psql,client backend,,0
+2025-11-02 22:28:17.953 IST,admin,covertDB,214,::1:49740,6907703e.d6,199,idle,2025-11-02 20:22:46 IST,Jan-96,0,LOG,0,statement: UPDATE employees SET salary = salary + 5000 WHERE department = 'IT';,psql,client backend,,0
+2025-11-02 22:28:18.003 IST,admin,covertDB,214,::1:49740,6907703e.d6,200,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 50.387 ms,psql,client backend,,0
+2025-11-02 22:31:03.849 IST,,,31,,69074d6a.1f,25,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 22:31:04.404 IST,,,31,,69074d6a.1f,26,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 4 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.409 s, sync=0.119 s, total=0.556 s; sync files=3, longest=0.082 s, average=0.040 s; distance=22 kB, estimate=1429 kB; lsn=0/43BEFE8, redo lsn=0/43BEF58",,checkpointer,,0
+2025-11-02 22:31:33.119 IST,admin,covertDB,214,::1:49740,6907703e.d6,201,idle,2025-11-02 20:22:46 IST,Jan-97,0,LOG,0,statement: UPDATE employees SET department = 'Human Resources' WHERE department = 'HR';,psql,client backend,,0
+2025-11-02 22:31:33.125 IST,admin,covertDB,214,::1:49740,6907703e.d6,202,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 5.539 ms,psql,client backend,,0
+2025-11-02 22:31:40.190 IST,admin,covertDB,214,::1:49740,6907703e.d6,203,idle,2025-11-02 20:22:46 IST,Jan-98,0,LOG,0,statement: UPDATE employees SET salary = 70000 WHERE emp_name = 'Neha Sharma';,psql,client backend,,0
+2025-11-02 22:31:40.227 IST,admin,covertDB,214,::1:49740,6907703e.d6,204,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 36.788 ms,psql,client backend,,0
+2025-11-02 22:31:45.859 IST,admin,covertDB,214,::1:49740,6907703e.d6,205,idle,2025-11-02 20:22:46 IST,Jan-99,0,LOG,0,statement: UPDATE employees SET hire_date = '2025-01-01' WHERE emp_id = 10;,psql,client backend,,0
+2025-11-02 22:31:45.958 IST,admin,covertDB,214,::1:49740,6907703e.d6,206,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 98.728 ms,psql,client backend,,0
+2025-11-02 22:32:19.007 IST,admin,covertDB,214,::1:49740,6907703e.d6,207,idle,2025-11-02 20:22:46 IST,1/100,0,LOG,0,statement: DELETE FROM employees WHERE salary < 45000;,psql,client backend,,0
+2025-11-02 22:32:19.083 IST,admin,covertDB,214,::1:49740,6907703e.d6,208,DELETE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 75.913 ms,psql,client backend,,0
+2025-11-02 22:32:30.937 IST,admin,covertDB,214,::1:49740,6907703e.d6,209,idle,2025-11-02 20:22:46 IST,1/101,0,LOG,0,statement: SELECT COUNT(*) AS total_employees FROM employees;,psql,client backend,,0
+2025-11-02 22:32:30.938 IST,admin,covertDB,214,::1:49740,6907703e.d6,210,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.996 ms,psql,client backend,,0
+2025-11-02 22:32:36.108 IST,admin,covertDB,214,::1:49740,6907703e.d6,211,idle,2025-11-02 20:22:46 IST,1/102,0,LOG,0,"statement: SELECT department, COUNT(*) AS emp_count FROM employees GROUP BY department;",psql,client backend,,0
+2025-11-02 22:32:36.109 IST,admin,covertDB,214,::1:49740,6907703e.d6,212,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.686 ms,psql,client backend,,0
+2025-11-02 22:32:43.036 IST,admin,covertDB,214,::1:49740,6907703e.d6,213,idle,2025-11-02 20:22:46 IST,1/103,0,LOG,0,"statement: SELECT department, AVG(salary) AS avg_salary FROM employees GROUP BY department;",psql,client backend,,0
+2025-11-02 22:32:43.037 IST,admin,covertDB,214,::1:49740,6907703e.d6,214,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.876 ms,psql,client backend,,0
+2025-11-02 22:34:26.521 IST,admin,covertDB,214,::1:49740,6907703e.d6,215,idle,2025-11-02 20:22:46 IST,1/104,0,LOG,0,"statement: SELECT MIN(salary), MAX(salary) FROM employees;",psql,client backend,,0
+2025-11-02 22:34:26.522 IST,admin,covertDB,214,::1:49740,6907703e.d6,216,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.900 ms,psql,client backend,,0
+2025-11-02 22:34:33.427 IST,admin,covertDB,214,::1:49740,6907703e.d6,217,idle,2025-11-02 20:22:46 IST,1/105,0,LOG,0,"statement: SELECT department, MAX(salary) AS highest_salary FROM employees GROUP BY department;",psql,client backend,,0
+2025-11-02 22:34:33.428 IST,admin,covertDB,214,::1:49740,6907703e.d6,218,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.471 ms,psql,client backend,,0
+2025-11-02 22:35:36.336 IST,admin,covertDB,214,::1:49740,6907703e.d6,219,idle,2025-11-02 20:22:46 IST,1/106,0,LOG,0,"statement: SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 60000;",psql,client backend,,0
+2025-11-02 22:35:36.337 IST,admin,covertDB,214,::1:49740,6907703e.d6,220,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.810 ms,psql,client backend,,0
+2025-11-02 22:35:50.004 IST,admin,covertDB,214,::1:49740,6907703e.d6,221,idle,2025-11-02 20:22:46 IST,1/107,0,LOG,0,statement: UPDATE employees SET salary = salary * 1.05 WHERE department = 'Finance';,psql,client backend,,0
+2025-11-02 22:35:50.010 IST,admin,covertDB,214,::1:49740,6907703e.d6,222,UPDATE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 6.878 ms,psql,client backend,,0
+2025-11-02 22:36:03.443 IST,,,31,,69074d6a.1f,27,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 22:36:03.593 IST,,,31,,69074d6a.1f,28,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.107 s, sync=0.017 s, total=0.151 s; sync files=2, longest=0.012 s, average=0.009 s; distance=6 kB, estimate=1287 kB; lsn=0/43C0AB8, redo lsn=0/43C0A60",,checkpointer,,0
+2025-11-02 22:36:05.689 IST,admin,covertDB,214,::1:49740,6907703e.d6,223,idle,2025-11-02 20:22:46 IST,1/108,0,LOG,0,statement: DELETE FROM employees WHERE department = 'Operations' AND salary < 48000;,psql,client backend,,0
+2025-11-02 22:36:05.694 IST,admin,covertDB,214,::1:49740,6907703e.d6,224,DELETE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 5.401 ms,psql,client backend,,0
+2025-11-02 22:36:14.919 IST,admin,covertDB,214,::1:49740,6907703e.d6,225,idle,2025-11-02 20:22:46 IST,1/109,0,LOG,0,statement: DELETE FROM employees WHERE emp_name = 'Tanvi Joshi';,psql,client backend,,0
+2025-11-02 22:36:14.922 IST,admin,covertDB,214,::1:49740,6907703e.d6,226,DELETE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 3.502 ms,psql,client backend,,0
+2025-11-02 22:36:23.010 IST,admin,covertDB,214,::1:49740,6907703e.d6,227,idle,2025-11-02 20:22:46 IST,1/110,0,LOG,0,statement: ALTER TABLE employees ADD COLUMN city VARCHAR(50);,psql,client backend,,0
+2025-11-02 22:36:23.046 IST,admin,covertDB,214,::1:49740,6907703e.d6,228,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 36.560 ms,psql,client backend,,0
+2025-11-02 22:36:28.896 IST,admin,covertDB,214,::1:49740,6907703e.d6,229,idle,2025-11-02 20:22:46 IST,1/111,0,LOG,0,statement: ALTER TABLE employees RENAME COLUMN emp_name TO employee_name;,psql,client backend,,0
+2025-11-02 22:36:28.932 IST,admin,covertDB,214,::1:49740,6907703e.d6,230,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 36.354 ms,psql,client backend,,0
+2025-11-02 22:36:37.592 IST,admin,covertDB,214,::1:49740,6907703e.d6,231,idle,2025-11-02 20:22:46 IST,1/112,0,LOG,0,"statement: ALTER TABLE employees ALTER COLUMN salary TYPE DECIMAL(12,2);",psql,client backend,,0
+2025-11-02 22:36:37.604 IST,admin,covertDB,214,::1:49740,6907703e.d6,232,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 12.492 ms,psql,client backend,,0
+2025-11-02 22:36:46.908 IST,admin,covertDB,214,::1:49740,6907703e.d6,233,idle,2025-11-02 20:22:46 IST,1/113,0,LOG,0,statement: ALTER TABLE employees DROP COLUMN city;,psql,client backend,,0
+2025-11-02 22:36:46.913 IST,admin,covertDB,214,::1:49740,6907703e.d6,234,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 5.244 ms,psql,client backend,,0
+2025-11-02 22:36:53.925 IST,admin,covertDB,214,::1:49740,6907703e.d6,235,idle,2025-11-02 20:22:46 IST,1/114,0,LOG,0,"statement: SELECT emp_name, department, salary,
+CASE
+  WHEN salary >= 65000 THEN 'High Earner'
+  WHEN salary BETWEEN 50000 AND 64999 THEN 'Mid Earner'
+  ELSE 'Low Earner'
+END AS salary_category
+FROM employees;",psql,client backend,,0
+2025-11-02 22:36:53.926 IST,admin,covertDB,214,::1:49740,6907703e.d6,236,SELECT,2025-11-02 20:22:46 IST,1/114,0,ERROR,42703,"column ""emp_name"" does not exist",psql,client backend,,0
+2025-11-02 22:37:00.353 IST,admin,covertDB,214,::1:49740,6907703e.d6,237,idle,2025-11-02 20:22:46 IST,1/115,0,LOG,0,"statement: SELECT emp_name, department, salary,
+CASE
+  WHEN salary >= 65000 THEN 'High Earner'
+  WHEN salary BETWEEN 50000 AND 64999 THEN 'Mid Earner'
+  ELSE 'Low Earner'
+END AS salary_category
+FROM employees;",psql,client backend,,0
+2025-11-02 22:37:00.353 IST,admin,covertDB,214,::1:49740,6907703e.d6,238,SELECT,2025-11-02 20:22:46 IST,1/115,0,ERROR,42703,"column ""emp_name"" does not exist",psql,client backend,,0
+2025-11-02 22:37:12.990 IST,admin,covertDB,214,::1:49740,6907703e.d6,239,idle,2025-11-02 20:22:46 IST,1/116,0,LOG,0,"statement: SELECT * FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);",psql,client backend,,0
+2025-11-02 22:37:12.991 IST,admin,covertDB,214,::1:49740,6907703e.d6,240,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.165 ms,psql,client backend,,0
+2025-11-02 22:37:19.025 IST,admin,covertDB,214,::1:49740,6907703e.d6,241,idle,2025-11-02 20:22:46 IST,1/117,0,LOG,0,"statement: SELECT emp_name, salary FROM employees
+WHERE salary = (SELECT MAX(salary) FROM employees WHERE department = 'IT');",psql,client backend,,0
+2025-11-02 22:37:19.025 IST,admin,covertDB,214,::1:49740,6907703e.d6,242,SELECT,2025-11-02 20:22:46 IST,1/117,0,ERROR,42703,"column ""emp_name"" does not exist",psql,client backend,,0
+2025-11-02 22:37:26.118 IST,admin,covertDB,214,::1:49740,6907703e.d6,243,idle,2025-11-02 20:22:46 IST,1/118,0,LOG,0,"statement: SELECT department FROM employees
+WHERE salary > ALL (SELECT AVG(salary) FROM employees GROUP BY department);",psql,client backend,,0
+2025-11-02 22:37:26.120 IST,admin,covertDB,214,::1:49740,6907703e.d6,244,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 1.480 ms,psql,client backend,,0
+2025-11-02 22:37:32.302 IST,admin,covertDB,214,::1:49740,6907703e.d6,245,idle,2025-11-02 20:22:46 IST,1/119,0,LOG,0,"statement: CREATE VIEW high_salary_employees AS
+SELECT emp_id, emp_name, department, salary
+FROM employees
+WHERE salary > 60000;",psql,client backend,,0
+2025-11-02 22:37:32.302 IST,admin,covertDB,214,::1:49740,6907703e.d6,246,CREATE VIEW,2025-11-02 20:22:46 IST,1/119,0,ERROR,42703,"column ""emp_name"" does not exist",psql,client backend,,0
+2025-11-02 22:37:32.303 IST,admin,covertDB,214,::1:49740,6907703e.d6,247,idle,2025-11-02 20:22:46 IST,1/120,0,LOG,0,statement: SELECT * FROM high_salary_employees;,psql,client backend,,0
+2025-11-02 22:37:32.303 IST,admin,covertDB,214,::1:49740,6907703e.d6,248,SELECT,2025-11-02 20:22:46 IST,1/120,0,ERROR,42P01,"relation ""high_salary_employees"" does not exist",psql,client backend,,0
+2025-11-02 22:37:43.278 IST,admin,covertDB,214,::1:49740,6907703e.d6,249,idle,2025-11-02 20:22:46 IST,1/121,0,LOG,0,"statement: CREATE VIEW high_salary_employees AS
+SELECT emp_id, emp_name, department, salary
+FROM employees
+WHERE salary > 60000;",psql,client backend,,0
+2025-11-02 22:37:43.279 IST,admin,covertDB,214,::1:49740,6907703e.d6,250,CREATE VIEW,2025-11-02 20:22:46 IST,1/121,0,ERROR,42703,"column ""emp_name"" does not exist",psql,client backend,,0
+2025-11-02 22:37:59.255 IST,admin,covertDB,214,::1:49740,6907703e.d6,251,idle,2025-11-02 20:22:46 IST,1/122,0,LOG,0,statement: Select * from employees;,psql,client backend,,0
+2025-11-02 22:37:59.255 IST,admin,covertDB,214,::1:49740,6907703e.d6,252,SELECT,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 0.664 ms,psql,client backend,,0
+2025-11-02 22:39:55.850 IST,admin,covertDB,214,::1:49740,6907703e.d6,253,idle,2025-11-02 20:22:46 IST,1/123,0,LOG,0,statement: CREATE INDEX idx_department ON employees(department);,psql,client backend,,0
+2025-11-02 22:39:55.893 IST,admin,covertDB,214,::1:49740,6907703e.d6,254,CREATE INDEX,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 42.471 ms,psql,client backend,,0
+2025-11-02 22:39:55.893 IST,admin,covertDB,214,::1:49740,6907703e.d6,255,idle,2025-11-02 20:22:46 IST,1/124,0,LOG,0,statement: ALTER TABLE employees ADD CONSTRAINT chk_salary CHECK (salary > 0);,psql,client backend,,0
+2025-11-02 22:39:55.897 IST,admin,covertDB,214,::1:49740,6907703e.d6,256,ALTER TABLE,2025-11-02 20:22:46 IST,1/0,0,LOG,0,duration: 4.147 ms,psql,client backend,,0
+2025-11-02 22:40:18.538 IST,admin,covertDB,214,::1:49740,6907703e.d6,257,idle,2025-11-02 20:22:46 IST,,0,LOG,0,disconnection: session time: 2:17:32.499 user=admin database=covertDB host=::1 port=49740,psql,client backend,,0
+2025-11-02 22:41:03.655 IST,,,31,,69074d6a.1f,29,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-02 22:41:06.289 IST,,,31,,69074d6a.1f,30,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 25 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.537 s, sync=0.036 s, total=2.634 s; sync files=24, longest=0.010 s, average=0.002 s; distance=122 kB, estimate=1170 kB; lsn=0/43DF468, redo lsn=0/43DF410",,checkpointer,,0
+2025-11-03 13:18:05.001 IST,,,2046,::1:51022,69085e35.7fe,1,,2025-11-03 13:18:05 IST,,0,LOG,0,connection received: host=::1 port=51022,,not initialized,,0
+2025-11-03 13:18:05.003 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,2,authentication,2025-11-03 13:18:05 IST,02-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:121)",,client backend,,0
+2025-11-03 13:18:05.003 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,3,authentication,2025-11-03 13:18:05 IST,02-Jan,0,LOG,0,connection authorized: user=admin database=sampledb application_name=psql,,client backend,,0
+2025-11-03 13:33:20.434 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,4,idle,2025-11-03 13:18:05 IST,02-Feb,0,LOG,0,"statement: CREATE TABLE students (
+  student_id INT PRIMARY KEY,
+  name VARCHAR(50),
+  age INT,
+  department VARCHAR(50),
+  marks INT,
+  city VARCHAR(50)
+);",psql,client backend,,0
+2025-11-03 13:33:20.469 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,5,CREATE TABLE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 38.316 ms,psql,client backend,,0
+2025-11-03 13:33:40.961 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,6,idle,2025-11-03 13:18:05 IST,02-Mar,0,LOG,0,"statement: INSERT INTO students VALUES
+(1, 'Rohit Patil', 20, 'Computer Sci', 88, 'Pune'),
+(2, 'Sneha Joshi', 21, 'Electronics', 76, 'Mumbai'),
+(3, 'Aman Gupta', 22, 'Mechanical', 90, 'Nashik');",psql,client backend,,0
+2025-11-03 13:33:40.975 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,7,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 14.689 ms,psql,client backend,,0
+2025-11-03 13:33:59.107 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,8,idle,2025-11-03 13:18:05 IST,02-Apr,0,LOG,0,"statement: INSERT INTO students VALUES (4, 'Priya Deshmukh', 20, 'Computer Sci', 85, 'Pune'),
+(5, 'Rakesh Sharma', 23, 'Civil', 72, 'Nagpur');",psql,client backend,,0
+2025-11-03 13:33:59.115 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,9,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 8.362 ms,psql,client backend,,0
+2025-11-03 13:34:52.765 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,10,idle,2025-11-03 13:18:05 IST,02-May,0,LOG,0,statement: SELECT * FROM students;,psql,client backend,,0
+2025-11-03 13:34:52.767 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,11,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 3.191 ms,psql,client backend,,0
+2025-11-03 13:35:01.417 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,12,idle,2025-11-03 13:18:05 IST,02-Jun,0,LOG,0,"statement: SELECT name, marks FROM students;",psql,client backend,,0
+2025-11-03 13:35:01.418 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,13,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 1.360 ms,psql,client backend,,0
+2025-11-03 13:35:09.635 IST,,,31,,69074d6a.1f,31,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-03 13:35:12.375 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,14,idle,2025-11-03 13:18:05 IST,02-Jul,0,LOG,0,"statement: SELECT * FROM students ORDER BY city, name;",psql,client backend,,0
+2025-11-03 13:35:12.385 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,15,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 9.586 ms,psql,client backend,,0
+2025-11-03 13:35:12.870 IST,,,31,,69074d6a.1f,32,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 30 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=3.121 s, sync=0.083 s, total=3.236 s; sync files=27, longest=0.069 s, average=0.004 s; distance=126 kB, estimate=1066 kB; lsn=0/43FEE48, redo lsn=0/43FEDB8",,checkpointer,,0
+2025-11-03 13:36:02.110 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,16,idle,2025-11-03 13:18:05 IST,02-Aug,0,LOG,0,"statement: INSERT INTO students VALUES
+(6, 'Kiran More', 22, 'Electronics', 81, 'Pune'),
+(7, 'Tanvi Kulkarni', 21, 'Mechanical', 89, 'Mumbai'),
+(8, 'Rajesh Nair', 23, 'Civil', 65, 'Nashik'),
+(9, 'Shruti Patil', 20, 'Computer Sci', 92, 'Pune'),
+(10, 'Aakash Singh', 22, 'Electronics', 79, 'Nagpur'),
+(11, 'Deepa Shah', 21, 'Civil', 85, 'Mumbai'),
+(12, 'Vivek Pawar', 23, 'Mechanical', 73, 'Pune'),
+(13, 'Komal Jain', 22, 'Computer Sci', 91, 'Nashik');",psql,client backend,,0
+2025-11-03 13:36:02.118 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,17,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 9.323 ms,psql,client backend,,0
+2025-11-03 13:36:45.008 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,18,idle,2025-11-03 13:18:05 IST,02-Sep,0,LOG,0,"statement: INSERT INTO students VALUES (14, 'Rohan Das', 20, 'Electronics', 87, 'Pune'),
+(15, 'Neha Reddy', 21, 'Civil', 68, 'Nagpur'),
+(16, 'Sahil Patil', 22, 'Mechanical', 80, 'Mumbai'),
+(17, 'Pooja Agarwal', 20, 'Computer Sci', 95, 'Pune'),
+(18, 'Amit Joshi', 21, 'Electronics', 77, 'Nashik'),
+(19, 'Snehal Shinde', 23, 'Mechanical', 84, 'Mumbai'),
+(20, 'Manoj Patil', 22, 'Civil', 70, 'Pune');",psql,client backend,,0
+2025-11-03 13:36:45.012 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,19,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 3.479 ms,psql,client backend,,0
+2025-11-03 13:37:06.210 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,20,idle,2025-11-03 13:18:05 IST,02-Oct,0,LOG,0,"statement: INSERT INTO students VALUES (21, 'Ritika More', 21, 'Computer Sci', 82, 'Nashik'),
+(22, 'Harsh Mehta', 20, 'Electronics', 90, 'Mumbai'),
+(23, 'Vaishnavi Desai', 22, 'Civil', 75, 'Pune'),
+(24, 'Pranav Ghosh', 21, 'Mechanical', 88, 'Nagpur'),
+(25, 'Shweta Kulkarni', 20, 'Computer Sci', 86, 'Pune');",psql,client backend,,0
+2025-11-03 13:37:06.217 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,21,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 7.453 ms,psql,client backend,,0
+2025-11-03 13:37:34.553 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,22,idle,2025-11-03 13:18:05 IST,02-Nov,0,LOG,0,statement: SELECT * FROM students;,psql,client backend,,0
+2025-11-03 13:37:34.554 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,23,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 1.020 ms,psql,client backend,,0
+2025-11-03 13:37:49.910 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,24,idle,2025-11-03 13:18:05 IST,02-Dec,0,LOG,0,statement: SELECT * FROM students WHERE city = 'Pune';,psql,client backend,,0
+2025-11-03 13:37:49.920 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,25,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 10.550 ms,psql,client backend,,0
+2025-11-03 13:40:09.948 IST,,,31,,69074d6a.1f,33,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-03 13:40:10.188 IST,,,31,,69074d6a.1f,34,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 2 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.208 s, sync=0.007 s, total=0.239 s; sync files=3, longest=0.005 s, average=0.003 s; distance=4 kB, estimate=960 kB; lsn=0/43FFFA8, redo lsn=0/43FFF50",,checkpointer,,0
+2025-11-03 13:41:48.176 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,26,idle,2025-11-03 13:18:05 IST,Feb-13,0,LOG,0,statement: SELECT * FROM students;,psql,client backend,,0
+2025-11-03 13:41:48.177 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,27,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 0.897 ms,psql,client backend,,0
+2025-11-03 13:47:03.144 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,28,idle,2025-11-03 13:18:05 IST,Feb-14,0,LOG,0,statement: SELECT COUNT(*) AS total_students FROM students;,psql,client backend,,0
+2025-11-03 13:47:03.147 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,29,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 3.260 ms,psql,client backend,,0
+2025-11-03 13:47:10.260 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,30,idle,2025-11-03 13:18:05 IST,Feb-15,0,LOG,0,statement: SELECT AVG(marks) AS avg_marks FROM students;,psql,client backend,,0
+2025-11-03 13:47:10.265 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,31,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 5.728 ms,psql,client backend,,0
+2025-11-03 13:47:17.619 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,32,idle,2025-11-03 13:18:05 IST,Feb-16,0,LOG,0,"statement: SELECT MAX(marks) AS max_marks, MIN(marks) AS min_marks FROM students;",psql,client backend,,0
+2025-11-03 13:47:17.621 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,33,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 1.719 ms,psql,client backend,,0
+2025-11-03 13:47:25.567 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,34,idle,2025-11-03 13:18:05 IST,Feb-17,0,LOG,0,"statement: SELECT department, AVG(marks) AS avg_marks
+FROM students
+GROUP BY department
+ORDER BY avg_marks DESC;",psql,client backend,,0
+2025-11-03 13:47:25.569 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,35,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 2.299 ms,psql,client backend,,0
+2025-11-03 13:47:33.937 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,36,idle,2025-11-03 13:18:05 IST,Feb-18,0,LOG,0,"statement: UPDATE students
+SET marks = 93
+WHERE name = 'Rohit Patil';",psql,client backend,,0
+2025-11-03 13:47:33.946 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,37,UPDATE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 9.499 ms,psql,client backend,,0
+2025-11-03 13:47:40.508 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,38,idle,2025-11-03 13:18:05 IST,Feb-19,0,LOG,0,"statement: UPDATE students
+SET marks = marks + 5
+WHERE city = 'Pune';",psql,client backend,,0
+2025-11-03 13:47:40.516 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,39,UPDATE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 7.786 ms,psql,client backend,,0
+2025-11-03 13:47:48.386 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,40,idle,2025-11-03 13:18:05 IST,Feb-20,0,LOG,0,statement: DELETE FROM students WHERE student_id = 8;,psql,client backend,,0
+2025-11-03 13:47:48.389 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,41,DELETE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 3.842 ms,psql,client backend,,0
+2025-11-03 13:47:56.553 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,42,idle,2025-11-03 13:18:05 IST,Feb-21,0,LOG,0,statement: DELETE FROM students WHERE department = 'Civil';,psql,client backend,,0
+2025-11-03 13:47:56.557 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,43,DELETE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 4.447 ms,psql,client backend,,0
+2025-11-03 13:48:09.418 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,44,idle,2025-11-03 13:18:05 IST,Feb-22,0,LOG,0,statement: ALTER TABLE students ADD COLUMN email VARCHAR(100);,psql,client backend,,0
+2025-11-03 13:48:09.423 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,45,ALTER TABLE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 5.169 ms,psql,client backend,,0
+2025-11-03 13:48:15.321 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,46,idle,2025-11-03 13:18:05 IST,Feb-23,0,LOG,0,statement: ALTER TABLE students RENAME COLUMN city TO hometown;,psql,client backend,,0
+2025-11-03 13:48:15.324 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,47,ALTER TABLE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 4.076 ms,psql,client backend,,0
+2025-11-03 13:48:21.620 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,48,idle,2025-11-03 13:18:05 IST,Feb-24,0,ERROR,42601,"syntax error at or near ""MODIFY""",psql,client backend,,0
+2025-11-03 13:48:27.708 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,49,idle,2025-11-03 13:18:05 IST,Feb-25,0,LOG,0,statement: ALTER TABLE students DROP COLUMN email;,psql,client backend,,0
+2025-11-03 13:48:27.749 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,50,ALTER TABLE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 41.733 ms,psql,client backend,,0
+2025-11-03 13:48:46.485 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,51,idle,2025-11-03 13:18:05 IST,Feb-26,0,LOG,0,statement: SELECT * from students;,psql,client backend,,0
+2025-11-03 13:48:46.486 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,52,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 1.034 ms,psql,client backend,,0
+2025-11-03 13:49:49.832 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,53,idle,2025-11-03 13:18:05 IST,Feb-27,0,LOG,0,"statement: CREATE VIEW top_students AS
+SELECT student_id, name, department, marks, city
+FROM students
+WHERE marks >= 90;",psql,client backend,,0
+2025-11-03 13:49:49.832 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,54,CREATE VIEW,2025-11-03 13:18:05 IST,Feb-27,0,ERROR,42703,"column ""city"" does not exist",psql,client backend,,0
+2025-11-03 13:50:09.267 IST,,,31,,69074d6a.1f,35,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-03 13:50:09.859 IST,,,31,,69074d6a.1f,36,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.528 s, sync=0.028 s, total=0.593 s; sync files=6, longest=0.025 s, average=0.005 s; distance=27 kB, estimate=867 kB; lsn=0/4406ED8, redo lsn=0/4406E80",,checkpointer,,0
+2025-11-03 13:50:48.370 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,55,idle,2025-11-03 13:18:05 IST,Feb-28,0,LOG,0,"statement: CREATE VIEW top_students AS
+SELECT student_id, name, department, marks, city
+FROM students
+WHERE marks >= 90;",psql,client backend,,0
+2025-11-03 13:50:48.371 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,56,CREATE VIEW,2025-11-03 13:18:05 IST,Feb-28,0,ERROR,42703,"column ""city"" does not exist",psql,client backend,,0
+2025-11-03 13:51:44.238 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,57,idle,2025-11-03 13:18:05 IST,Feb-29,0,LOG,0,statement: Select city from students;,psql,client backend,,0
+2025-11-03 13:51:44.238 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,58,SELECT,2025-11-03 13:18:05 IST,Feb-29,0,ERROR,42703,"column ""city"" does not exist",psql,client backend,,0
+2025-11-03 13:51:51.632 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,59,idle,2025-11-03 13:18:05 IST,Feb-30,0,LOG,0,statement: Select City from students;,psql,client backend,,0
+2025-11-03 13:51:51.632 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,60,SELECT,2025-11-03 13:18:05 IST,Feb-30,0,ERROR,42703,"column ""city"" does not exist",psql,client backend,,0
+2025-11-03 13:52:09.261 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,61,idle,2025-11-03 13:18:05 IST,Feb-31,0,LOG,0,statement: Select * from students;,psql,client backend,,0
+2025-11-03 13:52:09.262 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,62,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 0.518 ms,psql,client backend,,0
+2025-11-03 13:52:54.015 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,63,idle,2025-11-03 13:18:05 IST,Feb-32,0,LOG,0,statement: ALTER TABLE students RENAME COLUMN hometown TO city;,psql,client backend,,0
+2025-11-03 13:52:54.020 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,64,ALTER TABLE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 5.355 ms,psql,client backend,,0
+2025-11-03 13:52:58.458 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,65,idle,2025-11-03 13:18:05 IST,Feb-33,0,LOG,0,"statement: CREATE VIEW top_students AS
+SELECT student_id, name, department, marks, city
+FROM students
+WHERE marks >= 90;",psql,client backend,,0
+2025-11-03 13:52:58.546 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,66,CREATE VIEW,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 88.003 ms,psql,client backend,,0
+2025-11-03 13:53:09.149 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,67,idle,2025-11-03 13:18:05 IST,Feb-34,0,LOG,0,"statement: CREATE VIEW top_students AS
+SELECT student_id, name, department, marks, city
+FROM students
+WHERE marks >= 90;",psql,client backend,,0
+2025-11-03 13:53:09.151 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,68,CREATE VIEW,2025-11-03 13:18:05 IST,Feb-34,0,ERROR,42P07,"relation ""top_students"" already exists",psql,client backend,,0
+2025-11-03 13:53:23.741 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,69,idle,2025-11-03 13:18:05 IST,Feb-35,0,LOG,0,"statement: CREATE VIEW department_summary AS
+SELECT department, COUNT(*) AS total_students, AVG(marks) AS avg_marks
+FROM students
+GROUP BY department;",psql,client backend,,0
+2025-11-03 13:53:23.751 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,70,CREATE VIEW,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 9.659 ms,psql,client backend,,0
+2025-11-03 13:53:32.597 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,71,idle,2025-11-03 13:18:05 IST,Feb-36,0,LOG,0,"statement: CREATE VIEW pune_students AS
+SELECT * FROM students WHERE city = 'Pune';",psql,client backend,,0
+2025-11-03 13:53:32.602 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,72,CREATE VIEW,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 5.543 ms,psql,client backend,,0
+2025-11-03 13:53:44.272 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,73,idle,2025-11-03 13:18:05 IST,Feb-37,0,LOG,0,statement: CREATE INDEX idx_marks ON students(marks);,psql,client backend,,0
+2025-11-03 13:53:44.278 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,74,CREATE INDEX,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 6.402 ms,psql,client backend,,0
+2025-11-03 13:53:50.205 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,75,idle,2025-11-03 13:18:05 IST,Feb-38,0,LOG,0,statement: CREATE INDEX idx_department ON students(department);,psql,client backend,,0
+2025-11-03 13:53:50.214 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,76,CREATE INDEX,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 8.804 ms,psql,client backend,,0
+2025-11-03 13:53:58.489 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,77,idle,2025-11-03 13:18:05 IST,Feb-39,0,LOG,0,"statement: CREATE INDEX idx_dept_city ON students(department, city);",psql,client backend,,0
+2025-11-03 13:53:58.494 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,78,CREATE INDEX,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 4.566 ms,psql,client backend,,0
+2025-11-03 13:54:04.063 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,79,idle,2025-11-03 13:18:05 IST,Feb-40,0,ERROR,42601,"syntax error at or near ""ON""",psql,client backend,,0
+2025-11-03 13:54:44.578 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,80,idle,2025-11-03 13:18:05 IST,Feb-41,0,ERROR,42601,"syntax error at or near ""ON""",psql,client backend,,0
+2025-11-03 13:55:09.934 IST,,,31,,69074d6a.1f,37,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-03 13:55:12.905 IST,,,31,,69074d6a.1f,38,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 29 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.927 s, sync=0.023 s, total=2.972 s; sync files=25, longest=0.008 s, average=0.001 s; distance=166 kB, estimate=796 kB; lsn=0/4430868, redo lsn=0/4430810",,checkpointer,,0
+2025-11-03 13:55:25.842 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,81,idle,2025-11-03 13:18:05 IST,Feb-42,0,LOG,0,statement: DELETE FROM students WHERE marks < 60;,psql,client backend,,0
+2025-11-03 13:55:25.844 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,82,DELETE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 1.818 ms,psql,client backend,,0
+2025-11-03 13:55:33.832 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,83,idle,2025-11-03 13:18:05 IST,Feb-43,0,LOG,0,statement: DELETE FROM students WHERE department = 'Civil';,psql,client backend,,0
+2025-11-03 13:55:33.832 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,84,DELETE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 0.531 ms,psql,client backend,,0
+2025-11-03 13:55:42.658 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,85,idle,2025-11-03 13:18:05 IST,Feb-44,0,LOG,0,"statement: CREATE TABLE students_backup AS
+SELECT * FROM students;",psql,client backend,,0
+2025-11-03 13:55:42.663 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,86,CREATE TABLE AS,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 5.335 ms,psql,client backend,,0
+2025-11-03 13:55:48.257 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,87,idle,2025-11-03 13:18:05 IST,Feb-45,0,LOG,0,statement: INSERT INTO students SELECT * FROM students_backup;,psql,client backend,,0
+2025-11-03 13:55:48.258 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,88,INSERT,2025-11-03 13:18:05 IST,Feb-45,872,ERROR,23505,"duplicate key value violates unique constraint ""students_pkey""",psql,client backend,,0
+2025-11-03 13:55:59.332 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,89,idle,2025-11-03 13:18:05 IST,Feb-46,0,LOG,0,"statement: UPDATE students
+SET grade = CASE
+  WHEN marks >= 90 THEN 'A'
+  WHEN marks >= 80 THEN 'B'
+  WHEN marks >= 70 THEN 'C'
+  ELSE 'D'
+END;",psql,client backend,,0
+2025-11-03 13:55:59.337 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,90,UPDATE,2025-11-03 13:18:05 IST,Feb-46,0,ERROR,42703,"column ""grade"" of relation ""students"" does not exist",psql,client backend,,0
+2025-11-03 13:56:14.254 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,91,idle,2025-11-03 13:18:05 IST,Feb-47,0,LOG,0,"statement: SELECT name, marks,
+CASE
+  WHEN marks >= 90 THEN 'Excellent'
+  WHEN marks >= 75 THEN 'Good'
+  WHEN marks >= 60 THEN 'Average'
+  ELSE 'Poor'
+END AS performance
+FROM students;",psql,client backend,,0
+2025-11-03 13:56:14.255 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,92,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 0.652 ms,psql,client backend,,0
+2025-11-03 13:56:30.315 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,93,idle,2025-11-03 13:18:05 IST,Feb-48,0,LOG,0,"statement: SELECT s.name, s.department, d.hod_name
+FROM students s
+JOIN departments d
+ON s.department = d.dept_name;",psql,client backend,,0
+2025-11-03 13:56:30.323 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,94,SELECT,2025-11-03 13:18:05 IST,Feb-48,0,ERROR,42703,column d.hod_name does not exist,psql,client backend,,0
+2025-11-03 13:56:40.814 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,95,idle,2025-11-03 13:18:05 IST,Feb-49,0,LOG,0,"statement: CREATE TABLE departments (
+  dept_name VARCHAR(50) PRIMARY KEY,
+  hod_name VARCHAR(50)
+);",psql,client backend,,0
+2025-11-03 13:56:40.814 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,96,CREATE TABLE,2025-11-03 13:18:05 IST,Feb-49,0,ERROR,42P07,"relation ""departments"" already exists",psql,client backend,,0
+2025-11-03 13:56:44.717 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,97,idle,2025-11-03 13:18:05 IST,Feb-50,0,LOG,0,"statement: CREATE TABLE departments (
+  dept_name VARCHAR(50) PRIMARY KEY,
+  hod_name VARCHAR(50)
+);",psql,client backend,,0
+2025-11-03 13:56:44.717 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,98,CREATE TABLE,2025-11-03 13:18:05 IST,Feb-50,0,ERROR,42P07,"relation ""departments"" already exists",psql,client backend,,0
+2025-11-03 13:58:10.083 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,99,idle,2025-11-03 13:18:05 IST,Feb-51,0,LOG,0,"statement: UPDATE students
+SET marks = marks + 3
+WHERE department = 'Computer Sci';",psql,client backend,,0
+2025-11-03 13:58:10.088 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,100,UPDATE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 5.065 ms,psql,client backend,,0
+2025-11-03 13:58:16.019 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,101,idle,2025-11-03 13:18:05 IST,Feb-52,0,ERROR,42601,"syntax error at or near ""-""",psql,client backend,,0
+2025-11-03 13:58:23.400 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,102,idle,2025-11-03 13:18:05 IST,Feb-53,0,LOG,0,statement: SELECT * FROM students WHERE city LIKE 'N%';,psql,client backend,,0
+2025-11-03 13:58:23.402 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,103,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 2.047 ms,psql,client backend,,0
+2025-11-03 13:58:38.857 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,104,idle,2025-11-03 13:18:05 IST,Feb-54,0,LOG,0,"statement: DELETE FROM students
+WHERE student_id NOT IN (
+    SELECT MIN(student_id)
+    FROM students
+    GROUP BY name
+);",psql,client backend,,0
+2025-11-03 13:58:38.858 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,105,DELETE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 1.379 ms,psql,client backend,,0
+2025-11-03 13:58:46.404 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,106,idle,2025-11-03 13:18:05 IST,Feb-55,0,LOG,0,"statement: DELETE FROM students
+WHERE student_id IN (
+  SELECT student_id FROM (
+    SELECT student_id FROM students ORDER BY marks ASC LIMIT 3
+  ) AS temp
+);",psql,client backend,,0
+2025-11-03 13:58:46.412 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,107,DELETE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 8.420 ms,psql,client backend,,0
+2025-11-03 14:00:09.985 IST,,,31,,69074d6a.1f,39,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-03 14:00:12.729 IST,,,31,,69074d6a.1f,40,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 27 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.714 s, sync=0.013 s, total=2.744 s; sync files=24, longest=0.006 s, average=0.001 s; distance=122 kB, estimate=729 kB; lsn=0/444F340, redo lsn=0/444F2E8",,checkpointer,,0
+2025-11-03 14:00:30.835 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,108,idle,2025-11-03 13:18:05 IST,Feb-56,0,LOG,0,"statement: INSERT INTO students (student_id, name, age, department, marks, city)
+VALUES (26, 'Ritika Sharma', 21, 'Computer Sci', 89, 'Pune');",psql,client backend,,0
+2025-11-03 14:00:30.842 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,109,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 7.500 ms,psql,client backend,,0
+2025-11-03 14:00:36.981 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,110,idle,2025-11-03 13:18:05 IST,Feb-57,0,LOG,0,"statement: INSERT INTO students (student_id, name, age, department, marks, city)
+VALUES (27, 'Aditya Mehta', 22, 'Mechanical', 83, 'Mumbai');",psql,client backend,,0
+2025-11-03 14:00:36.985 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,111,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 4.533 ms,psql,client backend,,0
+2025-11-03 14:00:42.696 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,112,idle,2025-11-03 13:18:05 IST,Feb-58,0,LOG,0,"statement: INSERT INTO students (student_id, name, age, department, marks, city)
+VALUES (28, 'Neelam Patil', 23, 'Civil', 91, 'Nagpur');",psql,client backend,,0
+2025-11-03 14:00:42.703 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,113,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 7.232 ms,psql,client backend,,0
+2025-11-03 14:00:48.427 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,114,idle,2025-11-03 13:18:05 IST,Feb-59,0,LOG,0,"statement: INSERT INTO students (student_id, name, age, department, marks, city)
+VALUES (29, 'Kishor Rane', 20, 'Electronics', 65, 'Nashik');",psql,client backend,,0
+2025-11-03 14:00:48.431 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,115,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 3.979 ms,psql,client backend,,0
+2025-11-03 14:00:55.967 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,116,idle,2025-11-03 13:18:05 IST,Feb-60,0,LOG,0,"statement: INSERT INTO students (student_id, name, age, department, marks, city)
+VALUES (30, 'Manisha Kale', 22, 'Computer Sci', 82, 'Aurangabad');",psql,client backend,,0
+2025-11-03 14:00:55.971 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,117,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 3.592 ms,psql,client backend,,0
+2025-11-03 14:01:02.171 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,118,idle,2025-11-03 13:18:05 IST,Feb-61,0,LOG,0,"statement: INSERT INTO students (student_id, name, age, department, marks, city)
+VALUES 
+(31, 'Saurabh Joshi', 21, 'Mechanical', 88, 'Pune'),
+(32, 'Divya Deshmukh', 22, 'Civil', 79, 'Mumbai'),
+(33, 'Yash Patil', 23, 'Electronics', 84, 'Nashik'),
+(34, 'Priyanka Reddy', 21, 'Computer Sci', 93, 'Nagpur'),
+(35, 'Omkar Gawande', 20, 'Civil', 75, 'Pune');",psql,client backend,,0
+2025-11-03 14:01:02.175 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,119,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 3.692 ms,psql,client backend,,0
+2025-11-03 14:01:09.892 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,120,idle,2025-11-03 13:18:05 IST,Feb-62,0,LOG,0,statement: ALTER TABLE students ADD COLUMN remarks VARCHAR(100) DEFAULT 'Not Reviewed';,psql,client backend,,0
+2025-11-03 14:01:09.901 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,121,ALTER TABLE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 9.811 ms,psql,client backend,,0
+2025-11-03 14:01:15.607 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,122,idle,2025-11-03 13:18:05 IST,Feb-63,0,LOG,0,"statement: INSERT INTO students (student_id, name, age, department, marks, city)
+VALUES (36, 'Tanmay Bhosale', 22, 'Mechanical', 87, 'Mumbai');",psql,client backend,,0
+2025-11-03 14:01:15.627 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,123,INSERT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 19.847 ms,psql,client backend,,0
+2025-11-03 14:01:37.257 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,124,idle,2025-11-03 13:18:05 IST,Feb-64,0,LOG,0,"statement: SELECT * FROM students WHERE city IN ('Pune', 'Mumbai');",psql,client backend,,0
+2025-11-03 14:01:37.257 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,125,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 0.970 ms,psql,client backend,,0
+2025-11-03 14:01:43.226 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,126,idle,2025-11-03 13:18:05 IST,Feb-65,0,LOG,0,"statement: SELECT * FROM students 
+WHERE department IN ('Mechanical', 'Civil') AND marks > 80;",psql,client backend,,0
+2025-11-03 14:01:43.227 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,127,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 0.901 ms,psql,client backend,,0
+2025-11-03 14:01:48.872 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,128,idle,2025-11-03 13:18:05 IST,Feb-66,0,LOG,0,statement: SELECT * FROM students WHERE name LIKE '%Patil';,psql,client backend,,0
+2025-11-03 14:01:48.873 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,129,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 0.613 ms,psql,client backend,,0
+2025-11-03 14:01:56.176 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,130,idle,2025-11-03 13:18:05 IST,Feb-67,0,LOG,0,"statement: SELECT * FROM students
+WHERE marks > (SELECT AVG(marks) FROM students);",psql,client backend,,0
+2025-11-03 14:01:56.183 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,131,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 6.586 ms,psql,client backend,,0
+2025-11-03 14:02:22.089 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,132,idle,2025-11-03 13:18:05 IST,Feb-68,0,LOG,0,statement: DELETE FROM students WHERE age > 23;,psql,client backend,,0
+2025-11-03 14:02:22.090 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,133,DELETE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 0.571 ms,psql,client backend,,0
+2025-11-03 14:02:28.835 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,134,idle,2025-11-03 13:18:05 IST,Feb-69,0,LOG,0,"statement: DELETE FROM students
+WHERE student_id NOT IN (
+    SELECT MIN(student_id)
+    FROM students
+    GROUP BY name
+);",psql,client backend,,0
+2025-11-03 14:02:28.836 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,135,DELETE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 0.589 ms,psql,client backend,,0
+2025-11-03 14:02:36.860 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,136,idle,2025-11-03 13:18:05 IST,Feb-70,0,LOG,0,"statement: CREATE VIEW top10_students AS
+SELECT student_id, name, department, marks, city
+FROM students
+ORDER BY marks DESC
+LIMIT 10;",psql,client backend,,0
+2025-11-03 14:02:36.867 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,137,CREATE VIEW,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 6.959 ms,psql,client backend,,0
+2025-11-03 14:02:42.692 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,138,idle,2025-11-03 13:18:05 IST,Feb-71,0,LOG,0,"statement: CREATE VIEW above_avg_students AS
+SELECT s1.student_id, s1.name, s1.department, s1.marks
+FROM students s1
+WHERE s1.marks > (
+  SELECT AVG(s2.marks)
+  FROM students s2
+  WHERE s2.department = s1.department
+);",psql,client backend,,0
+2025-11-03 14:02:42.698 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,139,CREATE VIEW,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 5.757 ms,psql,client backend,,0
+2025-11-03 14:02:49.466 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,140,idle,2025-11-03 13:18:05 IST,Feb-72,0,LOG,0,"statement: CREATE VIEW city_summary AS
+SELECT city, COUNT(*) AS total_students, AVG(marks) AS avg_marks
+FROM students
+GROUP BY city;",psql,client backend,,0
+2025-11-03 14:02:49.473 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,141,CREATE VIEW,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 7.505 ms,psql,client backend,,0
+2025-11-03 14:03:04.356 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,142,idle,2025-11-03 13:18:05 IST,Feb-73,0,LOG,0,"statement: SELECT s1.*
+FROM students s1
+JOIN (
+  SELECT department, AVG(marks) AS dept_avg
+  FROM students
+  GROUP BY department
+) AS avg_dept
+ON s1.department = avg_dept.department
+WHERE s1.marks = ROUND(avg_dept.dept_avg);",psql,client backend,,0
+2025-11-03 14:03:04.364 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,143,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 7.686 ms,psql,client backend,,0
+2025-11-03 14:03:10.093 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,144,idle,2025-11-03 13:18:05 IST,Feb-74,0,LOG,0,"statement: SELECT 
+  student_id, name, department, marks,
+  RANK() OVER (ORDER BY marks DESC) AS rank_position
+FROM students;",psql,client backend,,0
+2025-11-03 14:03:10.095 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,145,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 6.596 ms,psql,client backend,,0
+2025-11-03 14:03:26.355 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,146,idle,2025-11-03 13:18:05 IST,Feb-75,0,LOG,0,"statement: UPDATE students
+SET city = 'Nagpur City'
+WHERE city = 'Nagpur';",psql,client backend,,0
+2025-11-03 14:03:26.362 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,147,UPDATE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 7.052 ms,psql,client backend,,0
+2025-11-03 14:03:33.472 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,148,idle,2025-11-03 13:18:05 IST,Feb-76,0,LOG,0,"statement: UPDATE students
+SET remarks = 'Needs Improvement'
+WHERE marks < 70;",psql,client backend,,0
+2025-11-03 14:03:33.479 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,149,UPDATE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 6.604 ms,psql,client backend,,0
+2025-11-03 14:03:43.793 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,150,idle,2025-11-03 13:18:05 IST,Feb-77,0,LOG,0,"statement: UPDATE students
+SET marks = marks + 1
+WHERE age = 22;",psql,client backend,,0
+2025-11-03 14:03:43.797 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,151,UPDATE,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 3.585 ms,psql,client backend,,0
+2025-11-03 14:04:16.310 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,152,idle,2025-11-03 13:18:05 IST,Feb-78,0,LOG,0,"statement: select * from studenta
+;",psql,client backend,,0
+2025-11-03 14:04:16.310 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,153,SELECT,2025-11-03 13:18:05 IST,Feb-78,0,ERROR,42P01,"relation ""studenta"" does not exist",psql,client backend,,0
+2025-11-03 14:04:20.838 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,154,idle,2025-11-03 13:18:05 IST,Feb-79,0,LOG,0,statement: select * from students;,psql,client backend,,0
+2025-11-03 14:04:20.838 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,155,SELECT,2025-11-03 13:18:05 IST,2/0,0,LOG,0,duration: 0.572 ms,psql,client backend,,0
+2025-11-03 14:04:32.794 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,156,idle,2025-11-03 13:18:05 IST,Feb-80,0,LOG,0,"statement: UPDATE students
+SET grade = CASE
+  WHEN marks >= 90 THEN 'A'
+  WHEN marks >= 80 THEN 'B'
+  WHEN marks >= 70 THEN 'C'
+  ELSE 'D'
+END;",psql,client backend,,0
+2025-11-03 14:04:32.794 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,157,UPDATE,2025-11-03 13:18:05 IST,Feb-80,0,ERROR,42703,"column ""grade"" of relation ""students"" does not exist",psql,client backend,,0
+2025-11-03 14:05:00.975 IST,admin,sampledb,2046,::1:51022,69085e35.7fe,158,idle,2025-11-03 13:18:05 IST,,0,LOG,0,disconnection: session time: 0:46:55.975 user=admin database=sampledb host=::1 port=51022,psql,client backend,,0
+2025-11-03 14:05:09.812 IST,,,31,,69074d6a.1f,41,,2025-11-02 17:54:10 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-03 14:05:13.168 IST,,,31,,69074d6a.1f,42,,2025-11-02 17:54:10 IST,,0,LOG,0,"checkpoint complete: wrote 33 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=3.322 s, sync=0.016 s, total=3.357 s; sync files=27, longest=0.008 s, average=0.001 s; distance=168 kB, estimate=673 kB; lsn=0/4479460, redo lsn=0/4479408",,checkpointer,,0
+2025-11-03 14:06:01.976 IST,,,2248,::1:58496,69086971.8c8,1,,2025-11-03 14:06:01 IST,,0,LOG,0,connection received: host=::1 port=58496,,not initialized,,0
+2025-11-03 14:06:01.978 IST,admin,sampledb,2248,::1:58496,69086971.8c8,2,authentication,2025-11-03 14:06:01 IST,03-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:121)",,client backend,,0
+2025-11-03 14:06:01.978 IST,admin,sampledb,2248,::1:58496,69086971.8c8,3,authentication,2025-11-03 14:06:01 IST,03-Jan,0,LOG,0,connection authorized: user=admin database=sampledb application_name=psql,,client backend,,0
+2025-11-03 14:06:06.758 IST,,,2249,::1:58504,69086976.8c9,1,,2025-11-03 14:06:06 IST,,0,LOG,0,connection received: host=::1 port=58504,,not initialized,,0
+2025-11-03 14:06:06.760 IST,admin,sampledb,2249,::1:58504,69086976.8c9,2,authentication,2025-11-03 14:06:06 IST,04-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:121)",,client backend,,0
+2025-11-03 14:06:06.760 IST,admin,sampledb,2249,::1:58504,69086976.8c9,3,authentication,2025-11-03 14:06:06 IST,04-Jan,0,LOG,0,connection authorized: user=admin database=sampledb application_name=psql,,client backend,,0
+2025-11-03 14:06:06.762 IST,admin,sampledb,2248,::1:58496,69086971.8c8,4,idle,2025-11-03 14:06:01 IST,,0,LOG,0,disconnection: session time: 0:00:04.785 user=admin database=sampledb host=::1 port=58496,psql,client backend,,0
+2025-11-03 14:06:15.411 IST,,,2251,::1:58468,6908697f.8cb,1,,2025-11-03 14:06:15 IST,,0,LOG,0,connection received: host=::1 port=58468,,not initialized,,0
+2025-11-03 14:06:15.413 IST,admin,covertDB,2251,::1:58468,6908697f.8cb,2,authentication,2025-11-03 14:06:15 IST,05-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:121)",,client backend,,0
+2025-11-03 14:06:15.413 IST,admin,covertDB,2251,::1:58468,6908697f.8cb,3,authentication,2025-11-03 14:06:15 IST,05-Jan,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-03 14:06:15.415 IST,admin,sampledb,2249,::1:58504,69086976.8c9,4,idle,2025-11-03 14:06:06 IST,,0,LOG,0,disconnection: session time: 0:00:08.657 user=admin database=sampledb host=::1 port=58504,psql,client backend,,0
+2025-11-03 14:06:21.631 IST,admin,covertDB,2251,::1:58468,6908697f.8cb,4,idle,2025-11-03 14:06:15 IST,,0,LOG,0,disconnection: session time: 0:00:06.220 user=admin database=covertDB host=::1 port=58468,psql,client backend,,0
+2025-11-05 12:28:16.573 IST,,,1,,690af588.1,1,,2025-11-05 12:28:16 IST,,0,LOG,0,ending log output to stderr,,postmaster,,0
+2025-11-05 12:28:16.573 IST,,,1,,690af588.1,2,,2025-11-05 12:28:16 IST,,0,LOG,0,"starting PostgreSQL 18.0 (Debian 18.0-1.pgdg13+3) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",,postmaster,,0
+2025-11-05 12:28:16.574 IST,,,1,,690af588.1,3,,2025-11-05 12:28:16 IST,,0,LOG,0,"listening on IPv4 address ""0.0.0.0"", port 5432",,postmaster,,0
+2025-11-05 12:28:16.574 IST,,,1,,690af588.1,4,,2025-11-05 12:28:16 IST,,0,LOG,0,"listening on IPv6 address ""::"", port 5432",,postmaster,,0
+2025-11-05 12:28:16.584 IST,,,1,,690af588.1,5,,2025-11-05 12:28:16 IST,,0,LOG,0,"listening on Unix socket ""/var/run/postgresql/.s.PGSQL.5432""",,postmaster,,0
+2025-11-05 12:28:16.596 IST,,,34,,690af588.22,1,,2025-11-05 12:28:16 IST,,0,LOG,0,database system was interrupted; last known up at 2025-11-03 14:05:13 IST,,startup,,0
+2025-11-05 12:28:18.756 IST,,,34,,690af588.22,2,,2025-11-05 12:28:16 IST,,0,LOG,0,database system was not properly shut down; automatic recovery in progress,,startup,,0
+2025-11-05 12:28:18.765 IST,,,34,,690af588.22,3,,2025-11-05 12:28:16 IST,,0,LOG,0,redo starts at 0/4479408,,startup,,0
+2025-11-05 12:28:18.765 IST,,,34,,690af588.22,4,,2025-11-05 12:28:16 IST,,0,LOG,0,"invalid record length at 0/4479510: expected at least 24, got 0",,startup,,0
+2025-11-05 12:28:18.765 IST,,,34,,690af588.22,5,,2025-11-05 12:28:16 IST,,0,LOG,0,"redo done at 0/44794D8 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s",,startup,,0
+2025-11-05 12:28:18.772 IST,,,32,,690af588.20,1,,2025-11-05 12:28:16 IST,,0,LOG,0,checkpoint starting: end-of-recovery immediate wait,,checkpointer,,0
+2025-11-05 12:28:18.806 IST,,,32,,690af588.20,2,,2025-11-05 12:28:16 IST,,0,LOG,0,"checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.011 s, sync=0.003 s, total=0.037 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/4479510, redo lsn=0/4479510",,checkpointer,,0
+2025-11-05 12:28:18.817 IST,,,1,,690af588.1,6,,2025-11-05 12:28:16 IST,,0,LOG,0,database system is ready to accept connections,,postmaster,,0
+2025-11-05 12:30:08.381 IST,,,50,[local],690af5f8.32,1,,2025-11-05 12:30:08 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 12:30:08.385 IST,postgres,postgres,50,[local],690af5f8.32,2,authentication,2025-11-05 12:30:08 IST,0/1,0,LOG,0,"connection authenticated: user=""postgres"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 12:30:08.385 IST,postgres,postgres,50,[local],690af5f8.32,3,authentication,2025-11-05 12:30:08 IST,0/1,0,LOG,0,connection authorized: user=postgres database=postgres application_name=psql,,client backend,,0
+2025-11-05 12:32:32.483 IST,postgres,postgres,50,[local],690af5f8.32,4,idle,2025-11-05 12:30:08 IST,,0,LOG,0,disconnection: session time: 0:02:24.102 user=postgres database=postgres host=[local],psql,client backend,,0
+2025-11-05 13:00:32.450 IST,,,1,,690af588.1,7,,2025-11-05 12:28:16 IST,,0,LOG,0,received fast shutdown request,,postmaster,,0
+2025-11-05 13:00:32.463 IST,,,1,,690af588.1,8,,2025-11-05 12:28:16 IST,,0,LOG,0,aborting any active transactions,,postmaster,,0
+2025-11-05 13:00:32.467 IST,,,1,,690af588.1,9,,2025-11-05 12:28:16 IST,,0,LOG,0,"background worker ""logical replication launcher"" (PID 37) exited with exit code 1",,postmaster,,0
+2025-11-05 13:00:32.470 IST,,,32,,690af588.20,3,,2025-11-05 12:28:16 IST,,0,LOG,0,shutting down,,checkpointer,,0
+2025-11-05 13:00:32.477 IST,,,32,,690af588.20,4,,2025-11-05 12:28:16 IST,,0,LOG,0,checkpoint starting: shutdown immediate,,checkpointer,,0
+2025-11-05 13:00:32.509 IST,,,32,,690af588.20,5,,2025-11-05 12:28:16 IST,,0,LOG,0,"checkpoint complete: wrote 0 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.039 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/44795C0, redo lsn=0/44795C0",,checkpointer,,0
+2025-11-05 13:00:32.538 IST,,,1,,690af588.1,10,,2025-11-05 12:28:16 IST,,0,LOG,0,database system is shut down,,postmaster,,0
+2025-11-05 13:01:09.008 IST,,,1,,690afd3c.1,1,,2025-11-05 13:01:08 IST,,0,LOG,0,ending log output to stderr,,postmaster,,0
+2025-11-05 13:01:09.008 IST,,,1,,690afd3c.1,2,,2025-11-05 13:01:08 IST,,0,LOG,0,"starting PostgreSQL 18.0 (Debian 18.0-1.pgdg13+3) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",,postmaster,,0
+2025-11-05 13:01:09.009 IST,,,1,,690afd3c.1,3,,2025-11-05 13:01:08 IST,,0,LOG,0,"listening on IPv4 address ""0.0.0.0"", port 5432",,postmaster,,0
+2025-11-05 13:01:09.009 IST,,,1,,690afd3c.1,4,,2025-11-05 13:01:08 IST,,0,LOG,0,"listening on IPv6 address ""::"", port 5432",,postmaster,,0
+2025-11-05 13:01:09.015 IST,,,1,,690afd3c.1,5,,2025-11-05 13:01:08 IST,,0,LOG,0,"listening on Unix socket ""/var/run/postgresql/.s.PGSQL.5432""",,postmaster,,0
+2025-11-05 13:01:09.029 IST,,,34,,690afd3d.22,1,,2025-11-05 13:01:09 IST,,0,LOG,0,database system was shut down at 2025-11-05 13:00:32 IST,,startup,,0
+2025-11-05 13:01:09.039 IST,,,1,,690afd3c.1,6,,2025-11-05 13:01:08 IST,,0,LOG,0,database system is ready to accept connections,,postmaster,,0
+2025-11-05 13:03:45.269 IST,,,52,[local],690afdd9.34,1,,2025-11-05 13:03:45 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 13:03:45.274 IST,admin,covertDB,52,[local],690afdd9.34,2,authentication,2025-11-05 13:03:45 IST,0/1,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 13:03:45.274 IST,admin,covertDB,52,[local],690afdd9.34,3,authentication,2025-11-05 13:03:45 IST,0/1,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-05 13:06:09.106 IST,,,32,,690afd3d.20,1,,2025-11-05 13:01:09 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-05 13:06:09.292 IST,,,32,,690afd3d.20,2,,2025-11-05 13:01:09 IST,,0,LOG,0,"checkpoint complete: wrote 1 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.110 s, sync=0.020 s, total=0.194 s; sync files=3, longest=0.011 s, average=0.007 s; distance=6 kB, estimate=6 kB; lsn=0/447B1E0, redo lsn=0/447B188",,checkpointer,,0
+2025-11-05 15:13:40.788 IST,admin,covertDB,52,[local],690afdd9.34,4,idle,2025-11-05 13:03:45 IST,,0,LOG,0,disconnection: session time: 2:09:55.519 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-05 15:17:41.043 IST,,,151,[local],690b1d3d.97,1,,2025-11-05 15:17:41 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:17:41.044 IST,postgres,postgres,151,[local],690b1d3d.97,2,authentication,2025-11-05 15:17:41 IST,01-Jan,0,LOG,0,"connection authenticated: user=""postgres"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:17:41.044 IST,postgres,postgres,151,[local],690b1d3d.97,3,authentication,2025-11-05 15:17:41 IST,01-Jan,0,LOG,0,connection authorized: user=postgres database=postgres application_name=psql,,client backend,,0
+2025-11-05 15:17:47.919 IST,postgres,postgres,151,[local],690b1d3d.97,4,idle,2025-11-05 15:17:41 IST,01-Feb,0,LOG,0,"statement: SELECT r.rolname, r.rolsuper, r.rolinherit,
+  r.rolcreaterole, r.rolcreatedb, r.rolcanlogin,
+  r.rolconnlimit, r.rolvaliduntil
+, r.rolreplication
+, r.rolbypassrls
+FROM pg_catalog.pg_roles r
+WHERE r.rolname !~ '^pg_'
+ORDER BY 1;",psql,client backend,,0
+2025-11-05 15:17:47.957 IST,postgres,postgres,151,[local],690b1d3d.97,5,SELECT,2025-11-05 15:17:41 IST,1/0,0,LOG,0,duration: 46.558 ms,psql,client backend,,0
+2025-11-05 15:18:08.776 IST,postgres,postgres,151,[local],690b1d3d.97,6,idle,2025-11-05 15:17:41 IST,,0,LOG,0,disconnection: session time: 0:00:27.734 user=postgres database=postgres host=[local],psql,client backend,,0
+2025-11-05 15:18:27.622 IST,,,155,[local],690b1d6b.9b,1,,2025-11-05 15:18:27 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:18:27.623 IST,postgres,covertDB,155,[local],690b1d6b.9b,2,authentication,2025-11-05 15:18:27 IST,02-Jan,0,LOG,0,"connection authenticated: user=""postgres"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:18:27.623 IST,postgres,covertDB,155,[local],690b1d6b.9b,3,authentication,2025-11-05 15:18:27 IST,02-Jan,0,LOG,0,connection authorized: user=postgres database=covertDB application_name=psql,,client backend,,0
+2025-11-05 15:18:39.197 IST,postgres,covertDB,155,[local],690b1d6b.9b,4,idle,2025-11-05 15:18:27 IST,02-Feb,0,LOG,0,"statement: SELECT spcname AS ""Name"",
+  pg_catalog.pg_get_userbyid(spcowner) AS ""Owner"",
+  pg_catalog.pg_tablespace_location(oid) AS ""Location""
+FROM pg_catalog.pg_tablespace
+ORDER BY 1;",psql,client backend,,0
+2025-11-05 15:18:39.227 IST,postgres,covertDB,155,[local],690b1d6b.9b,5,SELECT,2025-11-05 15:18:27 IST,2/0,0,LOG,0,duration: 30.074 ms,psql,client backend,,0
+2025-11-05 15:19:05.858 IST,postgres,covertDB,155,[local],690b1d6b.9b,6,idle,2025-11-05 15:18:27 IST,,0,LOG,0,disconnection: session time: 0:00:38.236 user=postgres database=covertDB host=[local],psql,client backend,,0
+2025-11-05 15:19:29.849 IST,,,159,[local],690b1da9.9f,1,,2025-11-05 15:19:29 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:19:29.849 IST,admin,admin,159,[local],690b1da9.9f,2,authentication,2025-11-05 15:19:29 IST,03-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:19:29.849 IST,admin,admin,159,[local],690b1da9.9f,3,authentication,2025-11-05 15:19:29 IST,03-Jan,0,LOG,0,connection authorized: user=admin database=admin application_name=psql,,client backend,,0
+2025-11-05 15:19:29.856 IST,admin,admin,159,[local],690b1da9.9f,4,startup,2025-11-05 15:19:29 IST,03-Jan,0,FATAL,3D000,"database ""admin"" does not exist",,client backend,,0
+2025-11-05 15:42:46.603 IST,,,219,[local],690b231e.db,1,,2025-11-05 15:42:46 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:42:46.604 IST,postgres,covertDB,219,[local],690b231e.db,2,authentication,2025-11-05 15:42:46 IST,04-Jan,0,LOG,0,"connection authenticated: user=""postgres"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:42:46.604 IST,postgres,covertDB,219,[local],690b231e.db,3,authentication,2025-11-05 15:42:46 IST,04-Jan,0,LOG,0,connection authorized: user=postgres database=covertDB application_name=psql,,client backend,,0
+2025-11-05 15:42:51.247 IST,postgres,covertDB,219,[local],690b231e.db,4,idle,2025-11-05 15:42:46 IST,04-Feb,0,LOG,0,"statement: SELECT r.rolname, r.rolsuper, r.rolinherit,
+  r.rolcreaterole, r.rolcreatedb, r.rolcanlogin,
+  r.rolconnlimit, r.rolvaliduntil
+, r.rolreplication
+, r.rolbypassrls
+FROM pg_catalog.pg_roles r
+WHERE r.rolname !~ '^pg_'
+ORDER BY 1;",psql,client backend,,0
+2025-11-05 15:42:51.267 IST,postgres,covertDB,219,[local],690b231e.db,5,SELECT,2025-11-05 15:42:46 IST,4/0,0,LOG,0,duration: 21.101 ms,psql,client backend,,0
+2025-11-05 15:48:24.746 IST,postgres,covertDB,219,[local],690b231e.db,6,idle,2025-11-05 15:42:46 IST,04-Mar,0,LOG,0,statement: ALTER USER admin WITH PASSWORD 'admin12345';,psql,client backend,,0
+2025-11-05 15:48:24.767 IST,postgres,covertDB,219,[local],690b231e.db,7,ALTER ROLE,2025-11-05 15:42:46 IST,4/0,0,LOG,0,duration: 22.220 ms,psql,client backend,,0
+2025-11-05 15:48:34.377 IST,postgres,covertDB,219,[local],690b231e.db,8,idle,2025-11-05 15:42:46 IST,04-Apr,0,LOG,0,"statement: SELECT r.rolname, r.rolsuper, r.rolinherit,
+  r.rolcreaterole, r.rolcreatedb, r.rolcanlogin,
+  r.rolconnlimit, r.rolvaliduntil
+, r.rolreplication
+, r.rolbypassrls
+FROM pg_catalog.pg_roles r
+WHERE r.rolname !~ '^pg_'
+ORDER BY 1;",psql,client backend,,0
+2025-11-05 15:48:34.378 IST,postgres,covertDB,219,[local],690b231e.db,9,SELECT,2025-11-05 15:42:46 IST,4/0,0,LOG,0,duration: 1.455 ms,psql,client backend,,0
+2025-11-05 15:48:40.163 IST,postgres,covertDB,219,[local],690b231e.db,10,idle,2025-11-05 15:42:46 IST,,0,LOG,0,disconnection: session time: 0:05:53.560 user=postgres database=covertDB host=[local],psql,client backend,,0
+2025-11-05 15:48:45.585 IST,,,233,[local],690b2485.e9,1,,2025-11-05 15:48:45 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:48:45.586 IST,admin,admin,233,[local],690b2485.e9,2,authentication,2025-11-05 15:48:45 IST,05-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:48:45.586 IST,admin,admin,233,[local],690b2485.e9,3,authentication,2025-11-05 15:48:45 IST,05-Jan,0,LOG,0,connection authorized: user=admin database=admin application_name=psql,,client backend,,0
+2025-11-05 15:48:45.586 IST,admin,admin,233,[local],690b2485.e9,4,startup,2025-11-05 15:48:45 IST,05-Jan,0,FATAL,3D000,"database ""admin"" does not exist",,client backend,,0
+2025-11-05 15:48:53.147 IST,,,235,[local],690b248d.eb,1,,2025-11-05 15:48:53 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:48:53.148 IST,admin,covertDB,235,[local],690b248d.eb,2,authentication,2025-11-05 15:48:53 IST,06-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:48:53.149 IST,admin,covertDB,235,[local],690b248d.eb,3,authentication,2025-11-05 15:48:53 IST,06-Jan,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-05 15:48:58.733 IST,admin,covertDB,235,[local],690b248d.eb,4,idle,2025-11-05 15:48:53 IST,,0,LOG,0,disconnection: session time: 0:00:05.586 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-05 15:49:23.826 IST,,,1,,690afd3c.1,7,,2025-11-05 13:01:08 IST,,0,LOG,0,received fast shutdown request,,postmaster,,0
+2025-11-05 15:49:23.831 IST,,,1,,690afd3c.1,8,,2025-11-05 13:01:08 IST,,0,LOG,0,aborting any active transactions,,postmaster,,0
+2025-11-05 15:49:23.835 IST,,,1,,690afd3c.1,9,,2025-11-05 13:01:08 IST,,0,LOG,0,"background worker ""logical replication launcher"" (PID 37) exited with exit code 1",,postmaster,,0
+2025-11-05 15:49:23.837 IST,,,32,,690afd3d.20,3,,2025-11-05 13:01:09 IST,,0,LOG,0,shutting down,,checkpointer,,0
+2025-11-05 15:49:23.841 IST,,,32,,690afd3d.20,4,,2025-11-05 13:01:09 IST,,0,LOG,0,checkpoint starting: shutdown immediate,,checkpointer,,0
+2025-11-05 15:49:23.864 IST,,,32,,690afd3d.20,5,,2025-11-05 13:01:09 IST,,0,LOG,0,"checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.004 s, total=0.027 s; sync files=2, longest=0.002 s, average=0.002 s; distance=3 kB, estimate=6 kB; lsn=0/447BED0, redo lsn=0/447BED0",,checkpointer,,0
+2025-11-05 15:49:23.881 IST,,,1,,690afd3c.1,10,,2025-11-05 13:01:08 IST,,0,LOG,0,database system is shut down,,postmaster,,0
+2025-11-05 15:49:25.355 IST,,,1,,690b24ad.1,1,,2025-11-05 15:49:25 IST,,0,LOG,0,ending log output to stderr,,postmaster,,0
+2025-11-05 15:49:25.355 IST,,,1,,690b24ad.1,2,,2025-11-05 15:49:25 IST,,0,LOG,0,"starting PostgreSQL 18.0 (Debian 18.0-1.pgdg13+3) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",,postmaster,,0
+2025-11-05 15:49:25.356 IST,,,1,,690b24ad.1,3,,2025-11-05 15:49:25 IST,,0,LOG,0,"listening on IPv4 address ""0.0.0.0"", port 5432",,postmaster,,0
+2025-11-05 15:49:25.357 IST,,,1,,690b24ad.1,4,,2025-11-05 15:49:25 IST,,0,LOG,0,"listening on IPv6 address ""::"", port 5432",,postmaster,,0
+2025-11-05 15:49:25.377 IST,,,1,,690b24ad.1,5,,2025-11-05 15:49:25 IST,,0,LOG,0,"listening on Unix socket ""/var/run/postgresql/.s.PGSQL.5432""",,postmaster,,0
+2025-11-05 15:49:25.405 IST,,,33,,690b24ad.21,1,,2025-11-05 15:49:25 IST,,0,LOG,0,database system was shut down at 2025-11-05 15:49:23 IST,,startup,,0
+2025-11-05 15:49:25.438 IST,,,1,,690b24ad.1,6,,2025-11-05 15:49:25 IST,,0,LOG,0,database system is ready to accept connections,,postmaster,,0
+2025-11-05 15:54:25.485 IST,,,31,,690b24ad.1f,1,,2025-11-05 15:49:25 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-05 15:54:25.517 IST,,,31,,690b24ad.1f,2,,2025-11-05 15:49:25 IST,,0,LOG,0,"checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.006 s, total=0.033 s; sync files=2, longest=0.005 s, average=0.003 s; distance=0 kB, estimate=0 kB; lsn=0/447BFD8, redo lsn=0/447BF80",,checkpointer,,0
+2025-11-05 15:55:22.870 IST,,,90,[local],690b2612.5a,1,,2025-11-05 15:55:22 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:55:22.871 IST,admin,covertDB,90,[local],690b2612.5a,2,authentication,2025-11-05 15:55:22 IST,0/1,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:55:22.871 IST,admin,covertDB,90,[local],690b2612.5a,3,authentication,2025-11-05 15:55:22 IST,0/1,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-05 15:55:32.854 IST,admin,covertDB,90,[local],690b2612.5a,4,idle,2025-11-05 15:55:22 IST,0/2,0,LOG,0,statement: ALTER USER admin WITH PASSWORD 'admin12345';,psql,client backend,,0
+2025-11-05 15:55:32.867 IST,admin,covertDB,90,[local],690b2612.5a,5,ALTER ROLE,2025-11-05 15:55:22 IST,0/0,0,LOG,0,duration: 13.665 ms,psql,client backend,,0
+2025-11-05 15:56:59.811 IST,admin,covertDB,90,[local],690b2612.5a,6,idle,2025-11-05 15:55:22 IST,,0,LOG,0,disconnection: session time: 0:01:36.942 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-05 15:58:20.908 IST,,,109,[local],690b26c4.6d,1,,2025-11-05 15:58:20 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:58:20.909 IST,admin,covertDB,109,[local],690b26c4.6d,2,authentication,2025-11-05 15:58:20 IST,01-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:58:20.909 IST,admin,covertDB,109,[local],690b26c4.6d,3,authentication,2025-11-05 15:58:20 IST,01-Jan,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-05 15:58:27.892 IST,admin,covertDB,109,[local],690b26c4.6d,4,idle,2025-11-05 15:58:20 IST,,0,LOG,0,disconnection: session time: 0:00:06.984 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-05 15:58:33.444 IST,,,112,[local],690b26d1.70,1,,2025-11-05 15:58:33 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:58:33.445 IST,admin,covertDB,112,[local],690b26d1.70,2,authentication,2025-11-05 15:58:33 IST,02-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:58:33.446 IST,admin,covertDB,112,[local],690b26d1.70,3,authentication,2025-11-05 15:58:33 IST,02-Jan,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-05 15:58:40.966 IST,admin,covertDB,112,[local],690b26d1.70,4,idle,2025-11-05 15:58:33 IST,,0,LOG,0,disconnection: session time: 0:00:07.522 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-05 15:58:46.647 IST,,,114,[local],690b26de.72,1,,2025-11-05 15:58:46 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:58:46.649 IST,admin,covertDB,114,[local],690b26de.72,2,authentication,2025-11-05 15:58:46 IST,03-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:58:46.649 IST,admin,covertDB,114,[local],690b26de.72,3,authentication,2025-11-05 15:58:46 IST,03-Jan,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-05 15:58:52.989 IST,admin,covertDB,114,[local],690b26de.72,4,idle,2025-11-05 15:58:46 IST,,0,LOG,0,disconnection: session time: 0:00:06.342 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-05 15:59:00.438 IST,,,117,[local],690b26ec.75,1,,2025-11-05 15:59:00 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 15:59:00.440 IST,admin,covertDB,117,[local],690b26ec.75,2,authentication,2025-11-05 15:59:00 IST,04-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 15:59:00.440 IST,admin,covertDB,117,[local],690b26ec.75,3,authentication,2025-11-05 15:59:00 IST,04-Jan,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-05 15:59:25.602 IST,,,31,,690b24ad.1f,3,,2025-11-05 15:49:25 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-05 15:59:25.807 IST,,,31,,690b24ad.1f,4,,2025-11-05 15:49:25 IST,,0,LOG,0,"checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.155 s, sync=0.029 s, total=0.206 s; sync files=2, longest=0.021 s, average=0.015 s; distance=3 kB, estimate=3 kB; lsn=0/447CE40, redo lsn=0/447CDE8",,checkpointer,,0
+2025-11-05 16:00:01.854 IST,admin,covertDB,117,[local],690b26ec.75,4,idle,2025-11-05 15:59:00 IST,,0,LOG,0,disconnection: session time: 0:01:01.416 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-05 16:06:23.239 IST,,,146,[local],690b28a7.92,1,,2025-11-05 16:06:23 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 16:06:23.240 IST,admin,covertDB,146,[local],690b28a7.92,2,authentication,2025-11-05 16:06:23 IST,05-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 16:06:23.240 IST,admin,covertDB,146,[local],690b28a7.92,3,authentication,2025-11-05 16:06:23 IST,05-Jan,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-05 16:06:41.462 IST,admin,covertDB,146,[local],690b28a7.92,4,idle,2025-11-05 16:06:23 IST,,0,LOG,0,disconnection: session time: 0:00:18.222 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-05 16:07:59.809 IST,,,1,,690b24ad.1,7,,2025-11-05 15:49:25 IST,,0,LOG,0,received fast shutdown request,,postmaster,,0
+2025-11-05 16:07:59.816 IST,,,1,,690b24ad.1,8,,2025-11-05 15:49:25 IST,,0,LOG,0,aborting any active transactions,,postmaster,,0
+2025-11-05 16:07:59.819 IST,,,1,,690b24ad.1,9,,2025-11-05 15:49:25 IST,,0,LOG,0,"background worker ""logical replication launcher"" (PID 36) exited with exit code 1",,postmaster,,0
+2025-11-05 16:07:59.819 IST,,,31,,690b24ad.1f,5,,2025-11-05 15:49:25 IST,,0,LOG,0,shutting down,,checkpointer,,0
+2025-11-05 16:07:59.822 IST,,,31,,690b24ad.1f,6,,2025-11-05 15:49:25 IST,,0,LOG,0,checkpoint starting: shutdown immediate,,checkpointer,,0
+2025-11-05 16:07:59.837 IST,,,31,,690b24ad.1f,7,,2025-11-05 15:49:25 IST,,0,LOG,0,"checkpoint complete: wrote 0 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.018 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=3 kB; lsn=0/447CEF0, redo lsn=0/447CEF0",,checkpointer,,0
+2025-11-05 16:07:59.978 IST,,,1,,690b24ad.1,10,,2025-11-05 15:49:25 IST,,0,LOG,0,database system is shut down,,postmaster,,0
+2025-11-05 16:08:24.229 IST,,,1,,690b2920.1,1,,2025-11-05 16:08:24 IST,,0,LOG,0,ending log output to stderr,,postmaster,,0
+2025-11-05 16:08:24.229 IST,,,1,,690b2920.1,2,,2025-11-05 16:08:24 IST,,0,LOG,0,"starting PostgreSQL 18.0 (Debian 18.0-1.pgdg13+3) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",,postmaster,,0
+2025-11-05 16:08:24.230 IST,,,1,,690b2920.1,3,,2025-11-05 16:08:24 IST,,0,LOG,0,"listening on IPv4 address ""0.0.0.0"", port 5432",,postmaster,,0
+2025-11-05 16:08:24.230 IST,,,1,,690b2920.1,4,,2025-11-05 16:08:24 IST,,0,LOG,0,"listening on IPv6 address ""::"", port 5432",,postmaster,,0
+2025-11-05 16:08:24.248 IST,,,1,,690b2920.1,5,,2025-11-05 16:08:24 IST,,0,LOG,0,"listening on Unix socket ""/var/run/postgresql/.s.PGSQL.5432""",,postmaster,,0
+2025-11-05 16:08:24.261 IST,,,33,,690b2920.21,1,,2025-11-05 16:08:24 IST,,0,LOG,0,database system was shut down at 2025-11-05 16:07:59 IST,,startup,,0
+2025-11-05 16:08:24.274 IST,,,1,,690b2920.1,6,,2025-11-05 16:08:24 IST,,0,LOG,0,database system is ready to accept connections,,postmaster,,0
+2025-11-05 16:08:39.105 IST,,,49,[local],690b292f.31,1,,2025-11-05 16:08:39 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 16:08:39.106 IST,admin,covertDB,49,[local],690b292f.31,2,authentication,2025-11-05 16:08:39 IST,0/1,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 16:08:39.106 IST,admin,covertDB,49,[local],690b292f.31,3,authentication,2025-11-05 16:08:39 IST,0/1,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-05 16:08:43.312 IST,admin,covertDB,49,[local],690b292f.31,4,idle,2025-11-05 16:08:39 IST,,0,LOG,0,disconnection: session time: 0:00:04.207 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-05 16:08:48.523 IST,,,51,[local],690b2938.33,1,,2025-11-05 16:08:48 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-05 16:08:48.524 IST,admin,covertDB,51,[local],690b2938.33,2,authentication,2025-11-05 16:08:48 IST,01-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-05 16:08:48.524 IST,admin,covertDB,51,[local],690b2938.33,3,authentication,2025-11-05 16:08:48 IST,01-Jan,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-05 16:09:08.961 IST,,,1,,690b2920.1,7,,2025-11-05 16:08:24 IST,,0,LOG,0,received fast shutdown request,,postmaster,,0
+2025-11-05 16:09:08.969 IST,,,1,,690b2920.1,8,,2025-11-05 16:08:24 IST,,0,LOG,0,aborting any active transactions,,postmaster,,0
+2025-11-05 16:09:08.972 IST,admin,covertDB,51,[local],690b2938.33,4,idle,2025-11-05 16:08:48 IST,1/0,0,FATAL,57P01,terminating connection due to administrator command,psql,client backend,,0
+2025-11-05 16:09:08.972 IST,admin,covertDB,51,[local],690b2938.33,5,idle,2025-11-05 16:08:48 IST,,0,LOG,0,disconnection: session time: 0:00:20.449 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-05 16:09:08.972 IST,,,1,,690b2920.1,9,,2025-11-05 16:08:24 IST,,0,LOG,0,"background worker ""logical replication launcher"" (PID 36) exited with exit code 1",,postmaster,,0
+2025-11-05 16:09:08.973 IST,,,31,,690b2920.1f,1,,2025-11-05 16:08:24 IST,,0,LOG,0,shutting down,,checkpointer,,0
+2025-11-05 16:09:08.976 IST,,,31,,690b2920.1f,2,,2025-11-05 16:08:24 IST,,0,LOG,0,checkpoint starting: shutdown immediate,,checkpointer,,0
+2025-11-05 16:09:08.996 IST,,,31,,690b2920.1f,3,,2025-11-05 16:08:24 IST,,0,LOG,0,"checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.003 s, total=0.023 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/447CFA0, redo lsn=0/447CFA0",,checkpointer,,0
+2025-11-05 16:09:09.013 IST,,,1,,690b2920.1,10,,2025-11-05 16:08:24 IST,,0,LOG,0,database system is shut down,,postmaster,,0
+2025-11-24 11:30:14.672 IST,,,1,,6923f46e.1,1,,2025-11-24 11:30:14 IST,,0,LOG,0,ending log output to stderr,,postmaster,,0
+2025-11-24 11:30:14.672 IST,,,1,,6923f46e.1,2,,2025-11-24 11:30:14 IST,,0,LOG,0,"starting PostgreSQL 18.0 (Debian 18.0-1.pgdg13+3) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",,postmaster,,0
+2025-11-24 11:30:14.674 IST,,,1,,6923f46e.1,3,,2025-11-24 11:30:14 IST,,0,LOG,0,"listening on IPv4 address ""0.0.0.0"", port 5432",,postmaster,,0
+2025-11-24 11:30:14.674 IST,,,1,,6923f46e.1,4,,2025-11-24 11:30:14 IST,,0,LOG,0,"listening on IPv6 address ""::"", port 5432",,postmaster,,0
+2025-11-24 11:30:14.682 IST,,,1,,6923f46e.1,5,,2025-11-24 11:30:14 IST,,0,LOG,0,"listening on Unix socket ""/var/run/postgresql/.s.PGSQL.5432""",,postmaster,,0
+2025-11-24 11:30:14.696 IST,,,34,,6923f46e.22,1,,2025-11-24 11:30:14 IST,,0,LOG,0,database system was shut down at 2025-11-05 16:09:08 IST,,startup,,0
+2025-11-24 11:30:14.723 IST,,,1,,6923f46e.1,6,,2025-11-24 11:30:14 IST,,0,LOG,0,database system is ready to accept connections,,postmaster,,0
+2025-11-24 11:33:27.819 IST,,,58,[local],6923f52f.3a,1,,2025-11-24 11:33:27 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-24 11:33:27.838 IST,admin,covertDB,58,[local],6923f52f.3a,2,authentication,2025-11-24 11:33:27 IST,0/1,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-24 11:33:27.838 IST,admin,covertDB,58,[local],6923f52f.3a,3,authentication,2025-11-24 11:33:27 IST,0/1,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-24 11:33:34.456 IST,admin,covertDB,58,[local],6923f52f.3a,4,idle,2025-11-24 11:33:27 IST,,0,LOG,0,disconnection: session time: 0:00:06.637 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-24 11:33:37.767 IST,,,60,[local],6923f539.3c,1,,2025-11-24 11:33:37 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-24 11:33:37.768 IST,admin,covertDB,60,[local],6923f539.3c,2,authentication,2025-11-24 11:33:37 IST,01-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-24 11:33:37.768 IST,admin,covertDB,60,[local],6923f539.3c,3,authentication,2025-11-24 11:33:37 IST,01-Jan,0,LOG,0,connection authorized: user=admin database=covertDB application_name=psql,,client backend,,0
+2025-11-24 11:34:53.062 IST,admin,covertDB,60,[local],6923f539.3c,4,idle,2025-11-24 11:33:37 IST,01-Feb,0,LOG,0,"statement: SELECT
+  d.datname as ""Name"",
+  pg_catalog.pg_get_userbyid(d.datdba) as ""Owner"",
+  pg_catalog.pg_encoding_to_char(d.encoding) as ""Encoding"",
+  CASE d.datlocprovider WHEN 'b' THEN 'builtin' WHEN 'c' THEN 'libc' WHEN 'i' THEN 'icu' END AS ""Locale Provider"",
+  d.datcollate as ""Collate"",
+  d.datctype as ""Ctype"",
+  d.datlocale as ""Locale"",
+  d.daticurules as ""ICU Rules"",
+  CASE WHEN pg_catalog.array_length(d.datacl, 1) = 0 THEN '(none)' ELSE pg_catalog.array_to_string(d.datacl, E'\n') END AS ""Access privileges""
+FROM pg_catalog.pg_database d
+ORDER BY 1;",psql,client backend,,0
+2025-11-24 11:34:53.123 IST,admin,covertDB,60,[local],6923f539.3c,5,SELECT,2025-11-24 11:33:37 IST,1/0,0,LOG,0,duration: 73.511 ms,psql,client backend,,0
+2025-11-24 11:35:14.776 IST,,,32,,6923f46e.20,1,,2025-11-24 11:30:14 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-24 11:35:14.818 IST,,,32,,6923f46e.20,2,,2025-11-24 11:30:14 IST,,0,LOG,0,"checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.004 s, total=0.042 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/447D0A8, redo lsn=0/447D050",,checkpointer,,0
+2025-11-24 11:38:24.027 IST,admin,covertDB,60,[local],6923f539.3c,6,idle,2025-11-24 11:33:37 IST,01-Mar,0,ERROR,42601,"syntax error at or near ""CREATE""",psql,client backend,,0
+2025-11-24 11:38:24.028 IST,admin,covertDB,60,[local],6923f539.3c,7,idle,2025-11-24 11:33:37 IST,01-Apr,0,ERROR,42601,"syntax error at or near ""USE""",psql,client backend,,0
+2025-11-24 11:38:28.802 IST,admin,covertDB,60,[local],6923f539.3c,8,idle,2025-11-24 11:33:37 IST,01-May,0,LOG,0,statement: CREATE DATABASE mydb;,psql,client backend,,0
+2025-11-24 11:38:29.248 IST,admin,covertDB,60,[local],6923f539.3c,9,CREATE DATABASE,2025-11-24 11:33:37 IST,1/0,0,LOG,0,duration: 446.129 ms,psql,client backend,,0
+2025-11-24 11:38:36.307 IST,admin,covertDB,60,[local],6923f539.3c,10,idle,2025-11-24 11:33:37 IST,01-Jun,0,ERROR,42601,"syntax error at or near ""USE""",psql,client backend,,0
+2025-11-24 11:40:14.898 IST,,,32,,6923f46e.20,3,,2025-11-24 11:30:14 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-24 11:41:50.645 IST,,,32,,6923f46e.20,4,,2025-11-24 11:30:14 IST,,0,LOG,0,"checkpoint complete: wrote 952 buffers (5.8%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=95.454 s, sync=0.260 s, total=95.747 s; sync files=302, longest=0.006 s, average=0.001 s; distance=4361 kB, estimate=4361 kB; lsn=0/48BF838, redo lsn=0/48BF7A8",,checkpointer,,0
+2025-11-24 11:42:55.472 IST,admin,covertDB,60,[local],6923f539.3c,11,idle,2025-11-24 11:33:37 IST,01-Jul,0,LOG,0,statement: CREATE DATABASE companydb;,psql,client backend,,0
+2025-11-24 11:42:55.671 IST,admin,covertDB,60,[local],6923f539.3c,12,CREATE DATABASE,2025-11-24 11:33:37 IST,1/0,0,LOG,0,duration: 198.943 ms,psql,client backend,,0
+2025-11-24 11:43:36.166 IST,,,94,[local],6923f790.5e,1,,2025-11-24 11:43:36 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-24 11:43:36.167 IST,admin,companydb,94,[local],6923f790.5e,2,authentication,2025-11-24 11:43:36 IST,02-Jan,0,LOG,0,"connection authenticated: user=""admin"" method=trust (/var/lib/postgresql/18/docker/pg_hba.conf:117)",,client backend,,0
+2025-11-24 11:43:36.167 IST,admin,companydb,94,[local],6923f790.5e,3,authentication,2025-11-24 11:43:36 IST,02-Jan,0,LOG,0,connection authorized: user=admin database=companydb application_name=psql,,client backend,,0
+2025-11-24 11:43:36.173 IST,admin,covertDB,60,[local],6923f539.3c,13,idle,2025-11-24 11:33:37 IST,,0,LOG,0,disconnection: session time: 0:09:58.406 user=admin database=covertDB host=[local],psql,client backend,,0
+2025-11-24 11:44:37.909 IST,admin,companydb,94,[local],6923f790.5e,4,idle,2025-11-24 11:43:36 IST,02-Feb,0,LOG,0,"statement: CREATE TABLE employees (
+    emp_id SERIAL PRIMARY KEY,
+    emp_name VARCHAR(100) NOT NULL,
+    department VARCHAR(50),
+    salary NUMERIC(10,2) CHECK (salary > 0),
+    join_date DATE DEFAULT CURRENT_DATE,
+    email VARCHAR(100) UNIQUE
+);",psql,client backend,,0
+2025-11-24 11:44:38.052 IST,admin,companydb,94,[local],6923f790.5e,5,CREATE TABLE,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 143.381 ms,psql,client backend,,0
+2025-11-24 11:45:00.899 IST,admin,companydb,94,[local],6923f790.5e,6,idle,2025-11-24 11:43:36 IST,02-Mar,0,LOG,0,"statement: CREATE TABLE departments (
+    dept_id SERIAL PRIMARY KEY,
+    dept_name VARCHAR(50) UNIQUE NOT NULL
+);",psql,client backend,,0
+2025-11-24 11:45:00.939 IST,admin,companydb,94,[local],6923f790.5e,7,CREATE TABLE,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 40.815 ms,psql,client backend,,0
+2025-11-24 11:45:00.940 IST,admin,companydb,94,[local],6923f790.5e,8,idle,2025-11-24 11:43:36 IST,02-Apr,0,LOG,0,"statement: CREATE TABLE emp_details (
+    detail_id SERIAL PRIMARY KEY,
+    emp_id INT REFERENCES employees(emp_id) ON DELETE CASCADE,
+    address TEXT
+);",psql,client backend,,0
+2025-11-24 11:45:01.035 IST,admin,companydb,94,[local],6923f790.5e,9,CREATE TABLE,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 95.001 ms,psql,client backend,,0
+2025-11-24 11:45:14.732 IST,,,32,,6923f46e.20,5,,2025-11-24 11:30:14 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-24 11:46:52.045 IST,,,32,,6923f46e.20,6,,2025-11-24 11:30:14 IST,,0,LOG,0,"checkpoint complete: wrote 966 buffers (5.9%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=96.869 s, sync=0.320 s, total=97.313 s; sync files=315, longest=0.035 s, average=0.002 s; distance=4425 kB, estimate=4425 kB; lsn=0/4D12C78, redo lsn=0/4D11D20",,checkpointer,,0
+2025-11-24 11:55:25.475 IST,admin,companydb,94,[local],6923f790.5e,10,idle,2025-11-24 11:43:36 IST,02-May,0,LOG,0,"statement: INSERT INTO employees (emp_name, department, salary, email) VALUES
+('Rohit Patil', 'IT', 55000, 'rohit.patil@example.com'),
+('Amit Sharma', 'Finance', 62000, 'amit.sharma@example.com'),
+('Neha Gupta', 'HR', 48000, 'neha.gupta@example.com'),
+('Priya Kulkarni', 'Marketing', 53000, 'priya.kulkarni@example.com'),
+('Sahil Deshmukh', 'IT', 60000, 'sahil.deshmukh@example.com'),
+('Sneha Joshi', 'Finance', 65000, 'sneha.joshi@example.com'),
+('Aniket Rao', 'IT', 58000, 'aniket.rao@example.com'),
+('Meera Nair', 'HR', 47000, 'meera.nair@example.com');",psql,client backend,,0
+2025-11-24 11:55:25.524 IST,admin,companydb,94,[local],6923f790.5e,11,INSERT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 51.070 ms,psql,client backend,,0
+2025-11-24 12:00:00.396 IST,admin,companydb,94,[local],6923f790.5e,12,idle,2025-11-24 11:43:36 IST,02-Jun,0,LOG,0,statement: SELECT * FROM employees;,psql,client backend,,0
+2025-11-24 12:00:00.398 IST,admin,companydb,94,[local],6923f790.5e,13,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 2.848 ms,psql,client backend,,0
+2025-11-24 12:00:05.716 IST,admin,companydb,94,[local],6923f790.5e,14,idle,2025-11-24 11:43:36 IST,02-Jul,0,LOG,0,"statement: SELECT emp_name, department FROM employees;",psql,client backend,,0
+2025-11-24 12:00:05.716 IST,admin,companydb,94,[local],6923f790.5e,15,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 0.269 ms,psql,client backend,,0
+2025-11-24 12:00:14.232 IST,,,32,,6923f46e.20,7,,2025-11-24 11:30:14 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-24 12:00:15.231 IST,,,32,,6923f46e.20,8,,2025-11-24 11:30:14 IST,,0,LOG,0,"checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.915 s, sync=0.055 s, total=1.000 s; sync files=8, longest=0.044 s, average=0.007 s; distance=7 kB, estimate=3983 kB; lsn=0/4D13CA0, redo lsn=0/4D13C48",,checkpointer,,0
+2025-11-24 12:00:16.801 IST,admin,companydb,94,[local],6923f790.5e,16,idle,2025-11-24 11:43:36 IST,02-Aug,0,ERROR,42601,"syntax error at or near ""SELECT""",psql,client backend,,0
+2025-11-24 12:00:23.745 IST,admin,companydb,94,[local],6923f790.5e,17,idle,2025-11-24 11:43:36 IST,02-Sep,0,ERROR,42601,"syntax error at or near ""SELECT""",psql,client backend,,0
+2025-11-24 12:00:33.321 IST,admin,companydb,94,[local],6923f790.5e,18,idle,2025-11-24 11:43:36 IST,02-Oct,0,LOG,0,statement: SELECT * FROM employees WHERE salary > 60000 ;,psql,client backend,,0
+2025-11-24 12:00:33.322 IST,admin,companydb,94,[local],6923f790.5e,19,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 1.295 ms,psql,client backend,,0
+2025-11-24 12:00:41.302 IST,admin,companydb,94,[local],6923f790.5e,20,idle,2025-11-24 11:43:36 IST,02-Nov,0,LOG,0,statement: SELECT * FROM employees WHERE emp_name LIKE 'R%';,psql,client backend,,0
+2025-11-24 12:00:41.338 IST,admin,companydb,94,[local],6923f790.5e,21,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 36.371 ms,psql,client backend,,0
+2025-11-24 12:00:52.702 IST,admin,companydb,94,[local],6923f790.5e,22,idle,2025-11-24 11:43:36 IST,02-Dec,0,LOG,0,statement: SELECT * FROM employees;,psql,client backend,,0
+2025-11-24 12:00:52.703 IST,admin,companydb,94,[local],6923f790.5e,23,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 1.679 ms,psql,client backend,,0
+2025-11-24 12:01:36.523 IST,admin,companydb,94,[local],6923f790.5e,24,idle,2025-11-24 11:43:36 IST,Feb-13,0,LOG,0,"statement: INSERT INTO employees (emp_name, department, salary, email) VALUES ('Karan Malhotra', 'Marketing', 51000, 'karan.malhotra@example.com'),
+('Shreya Iyer', 'Finance', 70000, 'shreya.iyer@example.com'),
+('Vikram Singh', 'IT', 75000, 'vikram.singh@example.com'),
+('Aarav Verma', 'Marketing', 52000, 'aarav.verma@example.com'),
+('Isha Pandey', 'HR', 46000, 'isha.pandey@example.com'),
+('Rakesh Pawar', 'Finance', 68000, 'rakesh.pawar@example.com'),
+('Tanya Sharma', 'IT', 59000, 'tanya.sharma@example.com');",psql,client backend,,0
+2025-11-24 12:01:36.559 IST,admin,companydb,94,[local],6923f790.5e,25,INSERT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 36.318 ms,psql,client backend,,0
+2025-11-24 12:01:41.495 IST,admin,companydb,94,[local],6923f790.5e,26,idle,2025-11-24 11:43:36 IST,Feb-14,0,LOG,0,statement: SELECT * FROM employees;,psql,client backend,,0
+2025-11-24 12:01:41.496 IST,admin,companydb,94,[local],6923f790.5e,27,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 0.590 ms,psql,client backend,,0
+2025-11-24 12:01:47.712 IST,admin,companydb,94,[local],6923f790.5e,28,idle,2025-11-24 11:43:36 IST,Feb-15,0,LOG,0,statement: SELECT * FROM employees WHERE emp_name LIKE 'R%';,psql,client backend,,0
+2025-11-24 12:01:47.712 IST,admin,companydb,94,[local],6923f790.5e,29,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 0.684 ms,psql,client backend,,0
+2025-11-24 12:02:00.071 IST,admin,companydb,94,[local],6923f790.5e,30,idle,2025-11-24 11:43:36 IST,Feb-16,0,LOG,0,statement: SELECT * FROM employees ORDER BY salary DESC;,psql,client backend,,0
+2025-11-24 12:02:00.074 IST,admin,companydb,94,[local],6923f790.5e,31,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 3.784 ms,psql,client backend,,0
+2025-11-24 12:02:18.700 IST,admin,companydb,94,[local],6923f790.5e,32,idle,2025-11-24 11:43:36 IST,Feb-17,0,LOG,0,statement: UPDATE employees SET salary = 65000 WHERE emp_name = 'Rohit Patil';,psql,client backend,,0
+2025-11-24 12:02:18.738 IST,admin,companydb,94,[local],6923f790.5e,33,UPDATE,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 38.852 ms,psql,client backend,,0
+2025-11-24 12:02:24.802 IST,admin,companydb,94,[local],6923f790.5e,34,idle,2025-11-24 11:43:36 IST,Feb-18,0,LOG,0,statement: UPDATE employees SET department = 'IT' WHERE department = 'Marketing';,psql,client backend,,0
+2025-11-24 12:02:24.809 IST,admin,companydb,94,[local],6923f790.5e,35,UPDATE,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 6.262 ms,psql,client backend,,0
+2025-11-24 12:02:30.578 IST,admin,companydb,94,[local],6923f790.5e,36,idle,2025-11-24 11:43:36 IST,Feb-19,0,LOG,0,statement: DELETE FROM employees WHERE emp_name = 'Raj Shah';,psql,client backend,,0
+2025-11-24 12:02:30.578 IST,admin,companydb,94,[local],6923f790.5e,37,DELETE,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 0.403 ms,psql,client backend,,0
+2025-11-24 12:02:36.271 IST,admin,companydb,94,[local],6923f790.5e,38,idle,2025-11-24 11:43:36 IST,Feb-20,0,LOG,0,statement: DELETE FROM employees;,psql,client backend,,0
+2025-11-24 12:02:36.278 IST,admin,companydb,94,[local],6923f790.5e,39,DELETE,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 7.496 ms,psql,client backend,,0
+2025-11-24 12:02:52.775 IST,admin,companydb,94,[local],6923f790.5e,40,idle,2025-11-24 11:43:36 IST,Feb-21,0,LOG,0,"statement: INSERT INTO employees (emp_name, department, salary, email) VALUES
+('Rohit Patil', 'IT', 55000, 'rohit.patil@example.com'),
+('Amit Sharma', 'Finance', 62000, 'amit.sharma@example.com'),
+('Neha Gupta', 'HR', 48000, 'neha.gupta@example.com'),
+('Priya Kulkarni', 'Marketing', 53000, 'priya.kulkarni@example.com'),
+('Sahil Deshmukh', 'IT', 60000, 'sahil.deshmukh@example.com'),
+('Sneha Joshi', 'Finance', 65000, 'sneha.joshi@example.com'),
+('Aniket Rao', 'IT', 58000, 'aniket.rao@example.com'),
+('Meera Nair', 'HR', 47000, 'meera.nair@example.com'),
+('Karan Malhotra', 'Marketing', 51000, 'karan.malhotra@example.com'),
+('Shreya Iyer', 'Finance', 70000, 'shreya.iyer@example.com'),
+('Vikram Singh', 'IT', 75000, 'vikram.singh@example.com'),
+('Aarav Verma', 'Marketing', 52000, 'aarav.verma@example.com'),
+('Isha Pandey', 'HR', 46000, 'isha.pandey@example.com'),
+('Rakesh Pawar', 'Finance', 68000, 'rakesh.pawar@example.com'),
+('Tanya Sharma', 'IT', 59000, 'tanya.sharma@example.com'),
+('Yash Patil', 'Marketing', 55000, 'yash.patil@example.com'),
+('Manish Desai', 'Finance', 72000, 'manish.desai@example.com'),
+('Pooja Mishra', 'HR', 49000, 'pooja.mishra@example.com'),
+('Aaditya Thakur', 'IT', 61000, 'aaditya.thakur@example.com'),
+('Rina Dsouza', 'Marketing', 53000, 'rina.dsouza@example.com'),
+('Gaurav Jadhav', 'Finance', 64000, 'gaurav.jadhav@example.com'),
+('Komal Pawar', 'HR', 45500, 'komal.pawar@example.com'),
+('Nikhil Patankar', 'IT', 70500, 'nikhil.patankar@example.com'),
+('Harshad More', 'Marketing', 50000, 'harshad.more@example.com'),
+('Smita Reddy', 'Finance', 67500, 'smita.reddy@example.com'),
+('Varun Chavan', 'IT', 56000, 'varun.chavan@example.com'),
+('Anushka Lokhande', 'HR', 48000, 'anushka.lokhande@example.com'),
+('Devendra Shetty', 'Marketing', 52000, 'devendra.shetty@example.com'),
+('Rohini Patwardhan', 'Finance', 63000, 'rohini.patwardhan@example.com'),
+('Akash Jain', 'IT', 70000, 'akash.jain@example.com');",psql,client backend,,0
+2025-11-24 12:02:52.811 IST,admin,companydb,94,[local],6923f790.5e,41,INSERT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 36.051 ms,psql,client backend,,0
+2025-11-24 12:03:41.699 IST,admin,companydb,94,[local],6923f790.5e,42,idle,2025-11-24 11:43:36 IST,Feb-22,0,LOG,0,statement: select * from employees ;,psql,client backend,,0
+2025-11-24 12:03:41.700 IST,admin,companydb,94,[local],6923f790.5e,43,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 1.221 ms,psql,client backend,,0
+2025-11-24 12:05:14.294 IST,,,32,,6923f46e.20,9,,2025-11-24 11:30:14 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-24 12:05:15.728 IST,,,32,,6923f46e.20,10,,2025-11-24 11:30:14 IST,,0,LOG,0,"checkpoint complete: wrote 13 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.315 s, sync=0.060 s, total=1.435 s; sync files=14, longest=0.044 s, average=0.005 s; distance=42 kB, estimate=3589 kB; lsn=0/4D1E820, redo lsn=0/4D1E7C8",,checkpointer,,0
+2025-11-24 12:12:35.529 IST,,,213,[local],6923fe5b.d5,1,,2025-11-24 12:12:35 IST,,0,LOG,0,connection received: host=[local],,not initialized,,0
+2025-11-24 12:13:05.336 IST,admin,companydb,94,[local],6923f790.5e,44,idle,2025-11-24 11:43:36 IST,Feb-23,0,LOG,0,statement: DELETE FROM employees WHERE emp_name = 'Raj Shah';,psql,client backend,,0
+2025-11-24 12:13:05.337 IST,admin,companydb,94,[local],6923f790.5e,45,DELETE,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 1.894 ms,psql,client backend,,0
+2025-11-24 12:13:15.563 IST,admin,companydb,94,[local],6923f790.5e,46,idle,2025-11-24 11:43:36 IST,Feb-24,0,LOG,0,statement: SELECT COUNT(*) FROM employees;,psql,client backend,,0
+2025-11-24 12:13:15.598 IST,admin,companydb,94,[local],6923f790.5e,47,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 34.532 ms,psql,client backend,,0
+2025-11-24 12:13:22.512 IST,admin,companydb,94,[local],6923f790.5e,48,idle,2025-11-24 11:43:36 IST,Feb-25,0,LOG,0,statement: SELECT AVG(salary) FROM employees;,psql,client backend,,0
+2025-11-24 12:13:22.513 IST,admin,companydb,94,[local],6923f790.5e,49,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 1.203 ms,psql,client backend,,0
+2025-11-24 12:13:27.692 IST,admin,companydb,94,[local],6923f790.5e,50,idle,2025-11-24 11:43:36 IST,Feb-26,0,LOG,0,statement: SELECT MIN(salary) FROM employees;,psql,client backend,,0
+2025-11-24 12:13:27.693 IST,admin,companydb,94,[local],6923f790.5e,51,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 1.145 ms,psql,client backend,,0
+2025-11-24 12:13:33.283 IST,admin,companydb,94,[local],6923f790.5e,52,idle,2025-11-24 11:43:36 IST,Feb-27,0,LOG,0,statement: SELECT MAX(salary) FROM employees;,psql,client backend,,0
+2025-11-24 12:13:33.284 IST,admin,companydb,94,[local],6923f790.5e,53,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 1.040 ms,psql,client backend,,0
+2025-11-24 12:13:38.837 IST,admin,companydb,94,[local],6923f790.5e,54,idle,2025-11-24 11:43:36 IST,Feb-28,0,LOG,0,statement: SELECT SUM(salary) FROM employees;,psql,client backend,,0
+2025-11-24 12:13:38.838 IST,admin,companydb,94,[local],6923f790.5e,55,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 0.537 ms,psql,client backend,,0
+2025-11-24 12:13:47.856 IST,admin,companydb,94,[local],6923f790.5e,56,idle,2025-11-24 11:43:36 IST,Feb-29,0,LOG,0,"statement: SELECT department, COUNT(*), AVG(salary)
+FROM employees
+GROUP BY department;",psql,client backend,,0
+2025-11-24 12:13:47.857 IST,admin,companydb,94,[local],6923f790.5e,57,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 1.725 ms,psql,client backend,,0
+2025-11-24 12:15:26.690 IST,admin,companydb,94,[local],6923f790.5e,58,idle,2025-11-24 11:43:36 IST,Feb-30,0,LOG,0,"statement: INSERT INTO departments (dept_name, location) VALUES
+('IT', 'Pune'),
+('Finance', 'Mumbai'),
+('HR', 'Delhi'),
+('Marketing', 'Bangalore');",psql,client backend,,0
+2025-11-24 12:15:26.691 IST,admin,companydb,94,[local],6923f790.5e,59,INSERT,2025-11-24 11:43:36 IST,Feb-30,0,ERROR,42703,"column ""location"" of relation ""departments"" does not exist",psql,client backend,,0
+2025-11-24 12:15:39.580 IST,admin,companydb,94,[local],6923f790.5e,60,idle,2025-11-24 11:43:36 IST,Feb-31,0,LOG,0,"statement: ALTER TABLE employees
+ALTER COLUMN emp_name SET NOT NULL;",psql,client backend,,0
+2025-11-24 12:15:39.616 IST,admin,companydb,94,[local],6923f790.5e,61,ALTER TABLE,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 36.331 ms,psql,client backend,,0
+2025-11-24 12:15:46.103 IST,admin,companydb,94,[local],6923f790.5e,62,idle,2025-11-24 11:43:36 IST,Feb-32,0,LOG,0,"statement: ALTER TABLE employees
+ADD CONSTRAINT unique_email UNIQUE(email);",psql,client backend,,0
+2025-11-24 12:15:46.114 IST,admin,companydb,94,[local],6923f790.5e,63,ALTER TABLE,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 11.524 ms,psql,client backend,,0
+2025-11-24 12:15:51.797 IST,admin,companydb,94,[local],6923f790.5e,64,idle,2025-11-24 11:43:36 IST,Feb-33,0,LOG,0,statement: CREATE INDEX idx_department ON employees(department);,psql,client backend,,0
+2025-11-24 12:15:51.867 IST,admin,companydb,94,[local],6923f790.5e,65,CREATE INDEX,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 70.063 ms,psql,client backend,,0
+2025-11-24 12:15:59.245 IST,admin,companydb,94,[local],6923f790.5e,66,idle,2025-11-24 11:43:36 IST,Feb-34,0,LOG,0,"statement: CREATE VIEW high_salary_employees AS
+SELECT emp_name, salary
+FROM employees
+WHERE salary > 60000;",psql,client backend,,0
+2025-11-24 12:15:59.286 IST,admin,companydb,94,[local],6923f790.5e,67,CREATE VIEW,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 41.025 ms,psql,client backend,,0
+2025-11-24 12:16:04.510 IST,admin,companydb,94,[local],6923f790.5e,68,idle,2025-11-24 11:43:36 IST,Feb-35,0,LOG,0,statement: SELECT * FROM high_salary_employees;,psql,client backend,,0
+2025-11-24 12:16:04.513 IST,admin,companydb,94,[local],6923f790.5e,69,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 2.364 ms,psql,client backend,,0
+2025-11-24 12:17:17.680 IST,admin,companydb,94,[local],6923f790.5e,70,idle,2025-11-24 11:43:36 IST,Feb-36,0,LOG,0,"statement: CREATE OR REPLACE FUNCTION total_employees()
+RETURNS INTEGER AS $$
+DECLARE
+    total INT;
+BEGIN
+    SELECT COUNT(*) INTO total FROM employees;
+    RETURN total;
+END;
+$$ LANGUAGE plpgsql;",psql,client backend,,0
+2025-11-24 12:17:17.695 IST,admin,companydb,94,[local],6923f790.5e,71,CREATE FUNCTION,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 22.910 ms,psql,client backend,,0
+2025-11-24 12:17:30.869 IST,admin,companydb,94,[local],6923f790.5e,72,idle,2025-11-24 11:43:36 IST,Feb-37,0,LOG,0,statement: SELECT total_employees();,psql,client backend,,0
+2025-11-24 12:17:30.871 IST,admin,companydb,94,[local],6923f790.5e,73,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 1.978 ms,psql,client backend,,0
+2025-11-24 12:17:39.786 IST,admin,companydb,94,[local],6923f790.5e,74,idle,2025-11-24 11:43:36 IST,Feb-38,0,LOG,0,"statement: CREATE OR REPLACE FUNCTION make_uppercase()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.emp_name = UPPER(NEW.emp_name);
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;",psql,client backend,,0
+2025-11-24 12:17:39.824 IST,admin,companydb,94,[local],6923f790.5e,75,CREATE FUNCTION,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 38.499 ms,psql,client backend,,0
+2025-11-24 12:17:45.644 IST,admin,companydb,94,[local],6923f790.5e,76,idle,2025-11-24 11:43:36 IST,Feb-39,0,LOG,0,"statement: CREATE TRIGGER uppercase_name
+BEFORE INSERT ON employees
+FOR EACH ROW
+EXECUTE FUNCTION make_uppercase();",psql,client backend,,0
+2025-11-24 12:17:45.650 IST,admin,companydb,94,[local],6923f790.5e,77,CREATE TRIGGER,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 6.482 ms,psql,client backend,,0
+2025-11-24 12:19:55.416 IST,admin,companydb,94,[local],6923f790.5e,78,idle,2025-11-24 11:43:36 IST,Feb-40,0,LOG,0,"statement: SELECT n.nspname as ""Schema"",
+  c.relname as ""Name"",
+  CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'i' THEN 'index' WHEN 'S' THEN 'sequence' WHEN 't' THEN 'TOAST table' WHEN 'f' THEN 'foreign table' WHEN 'p' THEN 'partitioned table' WHEN 'I' THEN 'partitioned index' END as ""Type"",
+  pg_catalog.pg_get_userbyid(c.relowner) as ""Owner""
+FROM pg_catalog.pg_class c
+     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+     LEFT JOIN pg_catalog.pg_am am ON am.oid = c.relam
+WHERE c.relkind IN ('r','p','')
+      AND n.nspname <> 'pg_catalog'
+      AND n.nspname !~ '^pg_toast'
+      AND n.nspname <> 'information_schema'
+  AND pg_catalog.pg_table_is_visible(c.oid)
+ORDER BY 1,2;",psql,client backend,,0
+2025-11-24 12:19:55.428 IST,admin,companydb,94,[local],6923f790.5e,79,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 12.603 ms,psql,client backend,,0
+2025-11-24 12:20:14.906 IST,,,32,,6923f46e.20,11,,2025-11-24 11:30:14 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-24 12:20:19.096 IST,,,32,,6923f46e.20,12,,2025-11-24 11:30:14 IST,,0,LOG,0,"checkpoint complete: wrote 40 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=4.035 s, sync=0.101 s, total=4.191 s; sync files=37, longest=0.063 s, average=0.003 s; distance=177 kB, estimate=3248 kB; lsn=0/4D4ACA0, redo lsn=0/4D4AC48",,checkpointer,,0
+2025-11-24 12:21:28.892 IST,admin,companydb,94,[local],6923f790.5e,80,idle,2025-11-24 11:43:36 IST,Feb-41,0,LOG,0,"statement: INSERT INTO departments (dept_name)
+VALUES ('IT'), ('HR'), ('Finance'), ('Marketing'), ('Operations');",psql,client backend,,0
+2025-11-24 12:21:28.935 IST,admin,companydb,94,[local],6923f790.5e,81,INSERT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 43.224 ms,psql,client backend,,0
+2025-11-24 12:21:48.021 IST,admin,companydb,94,[local],6923f790.5e,82,idle,2025-11-24 11:43:36 IST,Feb-42,0,LOG,0,"statement: INSERT INTO emp_details (emp_id, address)
+VALUES 
+(1, 'Pune'),
+(2, 'Mumbai'),
+(3, 'Delhi'),
+(4, 'Bangalore'),
+(5, 'Hyderabad');",psql,client backend,,0
+2025-11-24 12:21:48.024 IST,admin,companydb,94,[local],6923f790.5e,83,INSERT,2025-11-24 11:43:36 IST,Feb-42,912,ERROR,23503,"insert or update on table ""emp_details"" violates foreign key constraint ""emp_details_emp_id_fkey""",psql,client backend,,0
+2025-11-24 12:25:14.165 IST,,,32,,6923f46e.20,13,,2025-11-24 11:30:14 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-24 12:25:15.668 IST,,,32,,6923f46e.20,14,,2025-11-24 11:30:14 IST,,0,LOG,0,"checkpoint complete: wrote 14 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.425 s, sync=0.051 s, total=1.503 s; sync files=11, longest=0.039 s, average=0.005 s; distance=20 kB, estimate=2925 kB; lsn=0/4D4FD40, redo lsn=0/4D4FCE8",,checkpointer,,0
+2025-11-24 12:25:19.465 IST,admin,companydb,94,[local],6923f790.5e,84,idle,2025-11-24 11:43:36 IST,Feb-43,0,LOG,0,"statement: INSERT INTO emp_details (emp_id, address)
+VALUES
+(1, 'Pune'),
+(2, 'Mumbai'),
+(3, 'Delhi'),
+(4, 'Bangalore'),
+(5, 'Hyderabad'),
+(6, 'Chennai'),
+(7, 'Nagpur'),
+(8, 'Surat'),
+(9, 'Jaipur'),
+(10, 'Kolkata'),
+(11, 'Noida'),
+(12, 'Ahmedabad'),
+(13, 'Lucknow'),
+(14, 'Goa'),
+(15, 'Indore');",psql,client backend,,0
+2025-11-24 12:25:19.467 IST,admin,companydb,94,[local],6923f790.5e,85,INSERT,2025-11-24 11:43:36 IST,Feb-43,913,ERROR,23503,"insert or update on table ""emp_details"" violates foreign key constraint ""emp_details_emp_id_fkey""",psql,client backend,,0
+2025-11-24 12:28:43.008 IST,admin,companydb,94,[local],6923f790.5e,86,idle,2025-11-24 11:43:36 IST,Feb-44,0,LOG,0,"statement: INSERT INTO emp_details (emp_id, address)
+VALUES
+(1, 'Pune, Maharashtra'),
+(2, 'Mumbai, Maharashtra'),
+(3, 'Delhi'),
+(4, 'Bengaluru, Karnataka'),
+(5, 'Hyderabad, Telangana'),
+(6, 'Chennai, Tamil Nadu'),
+(7, 'Nagpur, Maharashtra'),
+(8, 'Jaipur, Rajasthan'),
+(9, 'Surat, Gujarat'),
+(10, 'Indore, Madhya Pradesh'),
+(11, 'Kolkata, West Bengal'),
+(12, 'Ahmedabad, Gujarat'),
+(13, 'Lucknow, Uttar Pradesh'),
+(14, 'Nashik, Maharashtra'),
+(15, 'Goa'),
+(16, 'Thane, Maharashtra'),
+(17, 'Bhopal, Madhya Pradesh'),
+(18, 'Vadodara, Gujarat'),
+(19, 'Noida, Uttar Pradesh'),
+(20, 'Chandigarh'),
+(21, 'Mysuru, Karnataka'),
+(22, 'Udaipur, Rajasthan'),
+(23, 'Patna, Bihar'),
+(24, 'Ranchi, Jharkhand'),
+(25, 'Guwahati, Assam'),
+(26, 'Vijayawada, Andhra Pradesh'),
+(27, 'Kochi, Kerala'),
+(28, 'Shimla, Himachal Pradesh'),
+(29, 'Jodhpur, Rajasthan'),
+(30, 'Hubballi, Karnataka');",psql,client backend,,0
+2025-11-24 12:28:43.009 IST,admin,companydb,94,[local],6923f790.5e,87,INSERT,2025-11-24 11:43:36 IST,Feb-44,914,ERROR,23503,"insert or update on table ""emp_details"" violates foreign key constraint ""emp_details_emp_id_fkey""",psql,client backend,,0
+2025-11-24 12:29:06.077 IST,admin,companydb,94,[local],6923f790.5e,88,idle,2025-11-24 11:43:36 IST,Feb-45,0,LOG,0,statement: SELECT * FROM employees;,psql,client backend,,0
+2025-11-24 12:29:06.078 IST,admin,companydb,94,[local],6923f790.5e,89,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 0.853 ms,psql,client backend,,0
+2025-11-24 12:29:40.574 IST,admin,companydb,94,[local],6923f790.5e,90,idle,2025-11-24 11:43:36 IST,Feb-46,0,LOG,0,statement: SELECT count(*) FROM employees;,psql,client backend,,0
+2025-11-24 12:29:40.575 IST,admin,companydb,94,[local],6923f790.5e,91,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 1.459 ms,psql,client backend,,0
+2025-11-24 12:30:14.737 IST,,,32,,6923f46e.20,15,,2025-11-24 11:30:14 IST,,0,LOG,0,checkpoint starting: time,,checkpointer,,0
+2025-11-24 12:30:15.138 IST,,,32,,6923f46e.20,16,,2025-11-24 11:30:14 IST,,0,LOG,0,"checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.307 s, sync=0.045 s, total=0.402 s; sync files=4, longest=0.040 s, average=0.012 s; distance=7 kB, estimate=2633 kB; lsn=0/4D51B10, redo lsn=0/4D51AB8",,checkpointer,,0
+2025-11-24 12:31:13.320 IST,admin,companydb,94,[local],6923f790.5e,92,idle,2025-11-24 11:43:36 IST,Feb-47,0,LOG,0,statement: SELECT emp_id FROM employees ORDER BY emp_id;,psql,client backend,,0
+2025-11-24 12:31:13.321 IST,admin,companydb,94,[local],6923f790.5e,93,SELECT,2025-11-24 11:43:36 IST,2/0,0,LOG,0,duration: 2.040 ms,psql,client backend,,0
+2025-11-24 12:32:03.902 IST,admin,companydb,94,[local],6923f790.5e,94,idle,2025-11-24 11:43:36 IST,Feb-48,0,LOG,0,"statement: SELECT emp_id, name FROM employees;",psql,client backend,,0
+2025-11-24 12:32:03.902 IST,admin,companydb,94,[local],6923f790.5e,95,SELECT,2025-11-24 11:43:36 IST,Feb-48,0,ERROR,42703,"column ""name"" does not exist",psql,client backend,,0
