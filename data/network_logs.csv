@@ -1,6 +1,3 @@
-# CSV-File created with merge-csv.com
-# -----------------------------------------------------------
-
 frame.number,frame.time_epoch,ip.src,ip.dst,_ws.col.protocol,frame.len,tcp.srcport,tcp.dstport,udp.srcport,udp.dstport
 1,1763946811.766083868,,,ICMPv6,70,,,,
 2,1763946822.833735469,,,DHCPv6,120,,,546,547
